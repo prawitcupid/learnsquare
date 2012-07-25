@@ -1,0 +1,851 @@
+FONT		{FONT-FAMILY:  Ms Sans Serif,Verdana,Helvetica; FONT-SIZE: 14px}
+BODY		{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 14px}
+P					{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 14px}
+DIV				{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 14px}
+INPUT		{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 14px}
+TEXTAREA	{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 14px}
+FORM 				{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 14px}
+
+TABLE.list		{FONT-FAMILY: Ms Sans Serif,Helvetica; BACKGROUND-COLOR: #000000; FONT-SIZE: 11px}
+TD						{FONT-FAMILY: Ms Sans Serif,Helvetica; COLOR: #000000; FONT-SIZE: 11px}
+TD.head			{FONT-FAMILY: Ms Sans Serif,Helvetica; COLOR: #FFFFFF; BACKGROUND-COLOR: #000000; FONT-WEIGHT: bold; FONT-SIZE: 11px;}
+TR.list				{FONT-FAMILY: Ms Sans Serif,Helvetica; COLOR: #000000; BACKGROUND-COLOR: #FFFFFF; FONT-SIZE: 11px}
+
+.input					{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 15px; border: 1px solid #CCCCFF; background-color: #FFFFFF}
+.select				{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 14px; border: 1px solid #000000; background-color: #FFFFFF}
+.select_gray	{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 14px; border: 1px solid #000000; background-color: #FFECEC}
+
+A.leaf:link			{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: bold; color: "#800000"; }
+A.leaf:visited	{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: bold; color: "#800000"; }
+A.leaf:hover		{FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none ; FONT-WEIGHT: bold; color: "#336699";  }
+
+A:link						{BACKGROUND: none; COLOR: #000000; FONT-SIZE: 11px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A:active				{BACKGROUND: none; COLOR: #000000; FONT-SIZE: 11px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A:visited				{BACKGROUND: none; COLOR: #000000; FONT-SIZE: 11px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A:hover					{BACKGROUND: none; COLOR: #336699; FONT-SIZE: 11px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+
+A.invert:link			{BACKGROUND: none; COLOR: #FFFFFF; FONT-SIZE: 11px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A.invert:active		{BACKGROUND: none; COLOR: #FFFFFF; FONT-SIZE: 11px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A.invert:visited	{BACKGROUND: none; COLOR: #FFFFFF; FONT-SIZE: 11px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A.invert:hover		{BACKGROUND: none; COLOR: #336699; FONT-SIZE: 11px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+
+A:link				{BACKGROUND: none; COLOR: #000000; FONT-SIZE: 14px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A:active        {BACKGROUND: none; COLOR: #000000; FONT-SIZE: 14px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A:visited       {BACKGROUND: none; COLOR: #000000; FONT-SIZE: 14px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A:hover         {BACKGROUND: none; COLOR: #336699; FONT-SIZE: 14px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A.link:link				{BACKGROUND: none; COLOR: #000000; FONT-SIZE: 14px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A.link:active        {BACKGROUND: none; COLOR: #000000; FONT-SIZE: 14px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A.link:visited       {BACKGROUND: none; COLOR: #000000; FONT-SIZE: 14px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A.link:hover         {BACKGROUND: none; COLOR: #336699; FONT-SIZE: 14px; FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none}
+A.menu:link			{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: underline  ; FONT-WEIGHT: normal; color: "#000000"; }
+A.menu:visited	{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: underline  ; FONT-WEIGHT: normal; color: "#000000"; }
+A.menu:hover		{FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: underline ; FONT-WEIGHT: normal; color: "#3300CC";  }
+A.white:link			{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: normal; color: "#FFFFFF"; }
+A.white:visited	{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: normal; color: "#FFFFFF"; }
+A.white:hover		{FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none ; FONT-WEIGHT: normal; color: "#3300CC";  }
+A.blue:link			{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: normal; color: "#000099"; }
+A.blue:visited		{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: normal; color: "#000099"; }
+A.blue:hover		{FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none ; FONT-WEIGHT: normal; color: "#993300";  }
+A.gray:link			{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: normal; color: "#CCCCCC"; }
+A.gray:visited		{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: normal; color: "#CCCCCC"; }
+A.gray:hover		{FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none ; FONT-WEIGHT: normal; color: "#000099";  }
+A.head:link			{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: bold; color: "#FFFFFF"; }
+A.head:visited	{ FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: bold; color: "#FFFFFF"; }
+A.head:hover		{FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none ; FONT-WEIGHT: bold; color: "#FF9900";  }
+A.linebold:link		{ text-decoration: underline; FONT-WEIGHT: bold; color: "#000000";}
+A.linebold:visited	{ text-decoration: underline; FONT-WEIGHT: bold; color: "#000000";  }
+A.linebold:hover	{FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: bold; color: "#000000";  }
+A.line:link				{ text-decoration: underline; FONT-WEIGHT: none; color: "#800000";}
+A.line:visited		{ text-decoration: underline; FONT-WEIGHT: none; color: "#000000";  }
+A.line:hover			{FONT-FAMILY: Ms Sans Serif, Helvetica; TEXT-DECORATION: none  ; FONT-WEIGHT: none; color: "#800000";  }
+A.dot						{ color: black; text-decoration: none; list-style-position: outside; border-bottom: 1px dotted gray }
+
+.button_white	{FONT-WEIGHT: normal; FONT-SIZE:9px; color: #000000; BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid;BORDER-RIGHT:#000000 1px solid;BORDER-TOP: #000000 1px solid; background: #FF6600; cursor: hand}
+.button_gray	{FONT-WEIGHT: normal; FONT-SIZE: 9px; color: #000000; BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid;BORDER-RIGHT:#000000 1px solid;BORDER-TOP: #000000 1px solid; background: #CCCCCC; cursor: hand}
+.button	{
+	FONT-WEIGHT: bold; FONT-SIZE: 9px; color: #000000; BORDER-BOTTOM: #476208 1px solid; BORDER-LEFT: #476208 1px solid;BORDER-RIGHT:#CFED8A 1px solid;BORDER-TOP: #CFED8A 1px solid; cursor: hand
+}
+
+/* TA Menu styles */
+
+DIV.taMenu
+{
+   float            : left;
+   width            : 100%;
+   background       : #FFFFFF url(../images/taMenuBorder.gif) repeat-x bottom;
+}
+
+DIV.taMenu UL
+{
+   margin           : 0px;
+   padding          : 0px;
+   list-style       : none;
+}
+
+DIV.taMenu LI
+{
+   display          : inline;
+   margin           : 0px;
+   padding          : 0px;
+}
+
+DIV.taMenu A.tab
+{
+   float            : left;
+   background       : url(../images/taMenuRight.gif) no-repeat right top;
+   border-bottom    : 1px solid #84B0C7;
+
+   font-size        : 9px;
+   font-weight      : bold;
+   text-decoration  : none;
+}
+
+DIV.taMenu A.tab:hover
+{
+   background-position: 100% -150px;
+}
+
+DIV.taMenu A:link, DIV.taMenu A.tab:visited,
+DIV.taMenu A:active, DIV.taMenu A.tab:hover
+{
+   color            : #115E94;
+}
+
+DIV.taMenu SPAN
+{
+   float            : left;
+   display          : block;
+   background       : url(../images/taMenuLeft.gif) no-repeat left top;
+   padding          : 4px 9px;
+   white-space      : nowrap;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+DIV.taMenu SPAN {float : none;}
+/* End IE5-Mac hack */
+
+DIV.taMenu A:hover SPAN
+{
+   background-position: 0% -150px;
+}
+
+DIV.taMenu LI#current A
+{
+   background-position: 100% -150px;
+   border-width     : 0px;
+}
+
+DIV.taMenu LI#current SPAN
+{
+   background-position: 0% -150px;
+   padding-bottom   : 5px;
+}
+
+table.main
+{ 
+	border-top: 0px solid;
+	border-right: 1px solid #84B0C7;
+	border-bottom: 1px solid #84B0C7;
+	border-left: 1px solid #84B0C7;
+	height: 400px
+}
+
+.shed
+{
+	color: #FFFF00; font-weight: bold;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#CC0000', gradientType='1');
+}
+.shed2
+{
+	color: #FFFFFF; font-weight: bold;
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#000000', endColorStr='#EEEEEE', gradientType='1');
+}
+.shedline
+{
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#6799FF', gradientType='1');
+}
+
+
+/* ------------ end of learnsqure css -----------------*/
+/*
+  960 Grid System ~ Core CSS.
+  Learn more ~ http://960.gs/
+
+  Licensed under GPL and MIT.
+*/
+
+/*
+  Forces backgrounds to span full width,
+  even if there is horizontal scrolling.
+  Increase this if your layout is wider.
+
+  Note: IE6 works fine without this fix.
+*/
+
+body {
+  min-width: 960px;
+}
+
+/* `Container
+----------------------------------------------------------------------------------------------------*/
+
+.container_24 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+/* `Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12,
+.grid_13,
+.grid_14,
+.grid_15,
+.grid_16,
+.grid_17,
+.grid_18,
+.grid_19,
+.grid_20,
+.grid_21,
+.grid_22,
+.grid_23,
+.grid_24 {
+  display: inline;
+  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.push_1, .pull_1,
+.push_2, .pull_2,
+.push_3, .pull_3,
+.push_4, .pull_4,
+.push_5, .pull_5,
+.push_6, .pull_6,
+.push_7, .pull_7,
+.push_8, .pull_8,
+.push_9, .pull_9,
+.push_10, .pull_10,
+.push_11, .pull_11,
+.push_12, .pull_12,
+.push_13, .pull_13,
+.push_14, .pull_14,
+.push_15, .pull_15,
+.push_16, .pull_16,
+.push_17, .pull_17,
+.push_18, .pull_18,
+.push_19, .pull_19,
+.push_20, .pull_20,
+.push_21, .pull_21,
+.push_22, .pull_22,
+.push_23, .pull_23 {
+  position: relative;
+}
+
+/* `Grid >> Children (Alpha ~ First, Omega ~ Last)
+----------------------------------------------------------------------------------------------------*/
+
+.alpha {
+  margin-left: 0;
+}
+
+.omega {
+  margin-right: 0;
+}
+
+/* `Grid >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.container_24 .grid_1 {
+  width: 30px;
+}
+
+.container_24 .grid_2 {
+  width: 70px;
+}
+
+.container_24 .grid_3 {
+  width: 110px;
+}
+
+.container_24 .grid_4 {
+  width: 150px;
+}
+
+.container_24 .grid_5 {
+  width: 190px;
+}
+
+.container_24 .grid_6 {
+  width: 230px;
+}
+
+.container_24 .grid_7 {
+  width: 270px;
+}
+
+.container_24 .grid_8 {
+  width: 310px;
+}
+
+.container_24 .grid_9 {
+  width: 350px;
+}
+
+.container_24 .grid_10 {
+  width: 390px;
+}
+
+.container_24 .grid_11 {
+  width: 430px;
+}
+
+.container_24 .grid_12 {
+  width: 470px;
+}
+
+.container_24 .grid_13 {
+  width: 510px;
+}
+
+.container_24 .grid_14 {
+  width: 550px;
+}
+
+.container_24 .grid_15 {
+  width: 590px;
+}
+
+.container_24 .grid_16 {
+  width: 630px;
+}
+
+.container_24 .grid_17 {
+  width: 670px;
+}
+
+.container_24 .grid_18 {
+  width: 710px;
+}
+
+.container_24 .grid_19 {
+  width: 750px;
+}
+
+.container_24 .grid_20 {
+  width: 790px;
+}
+
+.container_24 .grid_21 {
+  width: 830px;
+}
+
+.container_24 .grid_22 {
+  width: 870px;
+}
+
+.container_24 .grid_23 {
+  width: 910px;
+}
+
+.container_24 .grid_24 {
+  width: 950px;
+}
+
+/* `Prefix Extra Space >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.container_24 .prefix_1 {
+  padding-left: 40px;
+}
+
+.container_24 .prefix_2 {
+  padding-left: 80px;
+}
+
+.container_24 .prefix_3 {
+  padding-left: 120px;
+}
+
+.container_24 .prefix_4 {
+  padding-left: 160px;
+}
+
+.container_24 .prefix_5 {
+  padding-left: 200px;
+}
+
+.container_24 .prefix_6 {
+  padding-left: 240px;
+}
+
+.container_24 .prefix_7 {
+  padding-left: 280px;
+}
+
+.container_24 .prefix_8 {
+  padding-left: 320px;
+}
+
+.container_24 .prefix_9 {
+  padding-left: 360px;
+}
+
+.container_24 .prefix_10 {
+  padding-left: 400px;
+}
+
+.container_24 .prefix_11 {
+  padding-left: 440px;
+}
+
+.container_24 .prefix_12 {
+  padding-left: 480px;
+}
+
+.container_24 .prefix_13 {
+  padding-left: 520px;
+}
+
+.container_24 .prefix_14 {
+  padding-left: 560px;
+}
+
+.container_24 .prefix_15 {
+  padding-left: 600px;
+}
+
+.container_24 .prefix_16 {
+  padding-left: 640px;
+}
+
+.container_24 .prefix_17 {
+  padding-left: 680px;
+}
+
+.container_24 .prefix_18 {
+  padding-left: 720px;
+}
+
+.container_24 .prefix_19 {
+  padding-left: 760px;
+}
+
+.container_24 .prefix_20 {
+  padding-left: 800px;
+}
+
+.container_24 .prefix_21 {
+  padding-left: 840px;
+}
+
+.container_24 .prefix_22 {
+  padding-left: 880px;
+}
+
+.container_24 .prefix_23 {
+  padding-left: 920px;
+}
+
+/* `Suffix Extra Space >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.container_24 .suffix_1 {
+  padding-right: 40px;
+}
+
+.container_24 .suffix_2 {
+  padding-right: 80px;
+}
+
+.container_24 .suffix_3 {
+  padding-right: 120px;
+}
+
+.container_24 .suffix_4 {
+  padding-right: 160px;
+}
+
+.container_24 .suffix_5 {
+  padding-right: 200px;
+}
+
+.container_24 .suffix_6 {
+  padding-right: 240px;
+}
+
+.container_24 .suffix_7 {
+  padding-right: 280px;
+}
+
+.container_24 .suffix_8 {
+  padding-right: 320px;
+}
+
+.container_24 .suffix_9 {
+  padding-right: 360px;
+}
+
+.container_24 .suffix_10 {
+  padding-right: 400px;
+}
+
+.container_24 .suffix_11 {
+  padding-right: 440px;
+}
+
+.container_24 .suffix_12 {
+  padding-right: 480px;
+}
+
+.container_24 .suffix_13 {
+  padding-right: 520px;
+}
+
+.container_24 .suffix_14 {
+  padding-right: 560px;
+}
+
+.container_24 .suffix_15 {
+  padding-right: 600px;
+}
+
+.container_24 .suffix_16 {
+  padding-right: 640px;
+}
+
+.container_24 .suffix_17 {
+  padding-right: 680px;
+}
+
+.container_24 .suffix_18 {
+  padding-right: 720px;
+}
+
+.container_24 .suffix_19 {
+  padding-right: 760px;
+}
+
+.container_24 .suffix_20 {
+  padding-right: 800px;
+}
+
+.container_24 .suffix_21 {
+  padding-right: 840px;
+}
+
+.container_24 .suffix_22 {
+  padding-right: 880px;
+}
+
+.container_24 .suffix_23 {
+  padding-right: 920px;
+}
+
+/* `Push Space >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.container_24 .push_1 {
+  left: 40px;
+}
+
+.container_24 .push_2 {
+  left: 80px;
+}
+
+.container_24 .push_3 {
+  left: 120px;
+}
+
+.container_24 .push_4 {
+  left: 160px;
+}
+
+.container_24 .push_5 {
+  left: 200px;
+}
+
+.container_24 .push_6 {
+  left: 240px;
+}
+
+.container_24 .push_7 {
+  left: 280px;
+}
+
+.container_24 .push_8 {
+  left: 320px;
+}
+
+.container_24 .push_9 {
+  left: 360px;
+}
+
+.container_24 .push_10 {
+  left: 400px;
+}
+
+.container_24 .push_11 {
+  left: 440px;
+}
+
+.container_24 .push_12 {
+  left: 480px;
+}
+
+.container_24 .push_13 {
+  left: 520px;
+}
+
+.container_24 .push_14 {
+  left: 560px;
+}
+
+.container_24 .push_15 {
+  left: 600px;
+}
+
+.container_24 .push_16 {
+  left: 640px;
+}
+
+.container_24 .push_17 {
+  left: 680px;
+}
+
+.container_24 .push_18 {
+  left: 720px;
+}
+
+.container_24 .push_19 {
+  left: 760px;
+}
+
+.container_24 .push_20 {
+  left: 800px;
+}
+
+.container_24 .push_21 {
+  left: 840px;
+}
+
+.container_24 .push_22 {
+  left: 880px;
+}
+
+.container_24 .push_23 {
+  left: 920px;
+}
+
+/* `Pull Space >> 24 Columns
+----------------------------------------------------------------------------------------------------*/
+
+.container_24 .pull_1 {
+  left: -40px;
+}
+
+.container_24 .pull_2 {
+  left: -80px;
+}
+
+.container_24 .pull_3 {
+  left: -120px;
+}
+
+.container_24 .pull_4 {
+  left: -160px;
+}
+
+.container_24 .pull_5 {
+  left: -200px;
+}
+
+.container_24 .pull_6 {
+  left: -240px;
+}
+
+.container_24 .pull_7 {
+  left: -280px;
+}
+
+.container_24 .pull_8 {
+  left: -320px;
+}
+
+.container_24 .pull_9 {
+  left: -360px;
+}
+
+.container_24 .pull_10 {
+  left: -400px;
+}
+
+.container_24 .pull_11 {
+  left: -440px;
+}
+
+.container_24 .pull_12 {
+  left: -480px;
+}
+
+.container_24 .pull_13 {
+  left: -520px;
+}
+
+.container_24 .pull_14 {
+  left: -560px;
+}
+
+.container_24 .pull_15 {
+  left: -600px;
+}
+
+.container_24 .pull_16 {
+  left: -640px;
+}
+
+.container_24 .pull_17 {
+  left: -680px;
+}
+
+.container_24 .pull_18 {
+  left: -720px;
+}
+
+.container_24 .pull_19 {
+  left: -760px;
+}
+
+.container_24 .pull_20 {
+  left: -800px;
+}
+
+.container_24 .pull_21 {
+  left: -840px;
+}
+
+.container_24 .pull_22 {
+  left: -880px;
+}
+
+.container_24 .pull_23 {
+  left: -920px;
+}
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after,
+.container_24:before,
+.container_24:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after,
+.container_24:after {
+  clear: both;
+}
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix,
+.container_24 {
+  zoom: 1;
+}
+
+/* end grid-960 system ------------------*/
+body { 
+	margin: 0;
+	padding: 0;
+}
+
+.mainmenu {
+	margin: 20px 0 50px 0;
+}
+
+.wrapper_header {
+	background: #0f3d54 url('../images/hbg.jpg') repeat-x center top;
+	padding-top: 10px;
+}
+
+.wrapper_content {
+	height: 100%;
+}
+
+.wrapper_footer {
+	background: url('../images/fbg.png') repeat-x center;
+}
+
+.fbbg {
+	background: #02161f url('../images/fbbg.jpg') repeat-x center top;
+	overflow: auto;
+	height: 100px;
+}
+	
+.content-main {
+	background: #fff;
+	padding: 5px;
+	border-radius: 4px 4px 4px 4px;
+	margin-bottom: 15px;
+}
+
+.content-side {
+	background: #0f68d5;
+	padding: 3px;
+	border-radius: 4px 4px 4px 4px;
+	margin-bottom: 15px;	
+}
+
+.content-side h4 {
+	margin: 0;
+	padding: 10px 0px 10px 5px;
+	color: #fff;
+}
+
+.content-side div {
+	background: #fff;
+	padding: 5px;
+	border-radius: 4px 4px 4px 4px;
+}
+
+.footer {
+	text-align: center;
+	padding: 30px 0;
+	color: #fff;
+}

@@ -1,0 +1,34 @@
+<?php
+define('_HELP','คำแนะนำ');
+define('_INSTRUCTION','เลือกหลักสูตรที่ต้องการเปิดเรียนแล้วตั้งค่าที่ต้องการได้แก่ ตั่งค่าหลักสูตรกำหนดวันเปิดเรียน กำหนดกลุ่มนักเรียน และผู้สอนตามลำดับ');
+define('_SUBMISSIONADMIN','Course Submissions');
+define('_CREATESUBMISSION','Add Course');
+define('_COURSESETTING','ตั้งค่าหลักหลักสูตร');
+define('_SELECTCOURSE','หลักสูตร');
+define('_SCHEDULE','กำหนดเปิด/ปิดบทเรียนในหลักสูตร:');
+define('_SCHEDULEBASED','เปิดเรียนตามวันเวลาเรียงตามบท');
+define('_STARTDATE','เริ่มวันที่');
+define('_SELFBASED','เรียนตามระยะเวลากำหนด');
+define('_DURATIONDATE','จำนวน');
+define('_DATEUNIT',' วัน (0 วัน คือไม่ปิดเรียน)');	
+define('_ASSESSMENT','การประเมินผล:');
+define('_PRETEST','มีการทดสอบก่อนเรียน');
+define('_POSTTEST','มีการทดสอบหลังเรียน');
+define('_STUDENTS','กำหนดกลุ่มผู้เรียน');
+define('_ALLOWENROLL','เปิดให้นักเรียนลงทะเบียนเอง');
+define('_ALLOWALLUSERS','ผู้ใช้งานทุกคนเข้าเรียนได้');
+define('_ALLOWGUEST','เปิดให้บุคคลทั่วไปเข้าเรียนได้');
+define('_SELECTSTUDENT','เลือกนักเรียนเข้าเรียน');
+define('_SELECTGROUP',' Select Group');
+define('_SELECTUSER',' Select User');
+define('_SELECTINSTRUCTOR','เลือกผู้สอน');
+define('_INSTRUCTOR','ผู้สอน');
+define('_TEACHINGASSISTANT','ผู้ช่วยสอน');
+define('_FINISH','ส่งค่า');
+define('_SUBMITHELP','เมื่อป้อนข้อมูลเสร็จแล้วกดปุ่ม "submit" หรือถ้าต้องการยกเลิก กดปุ่ม "Cancel" ');
+define('_CODE','รหัสวิชา');
+define('_COURSENAME','หลักสูตร');
+define('_LENGTH','ระยะเวลา');
+define('_COURSELIST','รายชื่อหลักสูตร');
+define('_TOTALCOURSES','หลักสูตรทั้งหมด');
+?>

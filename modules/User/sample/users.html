@@ -1,0 +1,53 @@
+?<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> User File Format</TITLE>
+<STYLE>
+BODY		{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 11px}
+TD		{FONT-FAMILY: Ms Sans Serif,Helvetica; FONT-SIZE: 15px}
+</STYLE>
+</HEAD>
+
+<BODY>
+<FONT SIZE="2" COLOR="#000000" FACE="Ms Sans Serif">
+<B><U>ตัวอย่างการสร้างไฟล์</U></B><BR><BR>
+เราสามารถเริ่มสร้างข้อมูลผู้ใช้งานจากไฟล์ฐานข้อมูล เช่น Access หรือจาก excel แล้ว export มาอยู่ในรูปของ text file ขั้นด้วยตัวอักษรพิเศษ จากนั้นนำไป import เข้าระบบได้เลย<BR><BR>
+
+<FONT SIZE="4" COLOR="RED">ข้อควรระวัง</FONT><BR>
+ไฟล์ที่ใช้ต้องทำการEncodeแบบ UTF-8 เท่านั้น ถ้ามีปัญหาลอง Convert ไฟล์ให้เป็น UTF-8 without BOM ด้วยโปรแกรมต่างๆเช่น<BR>
+<A href="http://www.adobe.com/products/dreamweaver/">Dreamweaver</A><BR>
+<A href="http://notepad-plus.sourceforge.net/">NotePad++</A><BR>
+<A href="http://www.openoffice.org/">Open Office</A><BR><BR>
+
+ตัวอย่างเช่น<BR>
+
+<BR>1. เริ่มสร้างจากไฟล์ excel ซึ่งประกอบด้วยข้อมูลนักเรียนชั้น ม. 1 โดยข้อมูลบรรทัดแรกใช้อ้างถึงชนิดช้อมูลที่จะส่งให้ระบบ เช่น ln_uno(เลขประจำตัว) , ln_name(ชื่อนามสุกลจริง), ln_uname(ชื่อที่ใช้ login), ln_pass(รหัสผ่าน), ln_email(อีเมล์),ln_phone(โทรศัพท์),ln_news(รับข่าวสาร) <BR><BR>
+<IMG SRC="images/1.jpg" WIDTH="489" HEIGHT="230" BORDER=0 ALT="">
+<BR><BR>
+2. เลือกเมนู แฟ้ม(File) -> บันทึกเป็น (Save as) -> เก็บเป็นชนิด (Type)
+<BR>ตั้งชื่อ lnusers.csv
+<BR><BR>
+<IMG SRC="images/2.jpg" WIDTH="499" HEIGHT="146" BORDER=0 ALT="">
+<BR><BR>
+3. จะได้ text file ที่มีหน้าตาดังนี้ซึ่งจะเป็นข้อมูลคั่นด้วย , (comma)
+<BR><BR>
+ตัวอย่างไฟล์สามารถดาวน์โหลดได้<BR>
+<U><A href="modules/Users/sample/lnusers.csv">lnusers.csv</A></U><br>
+<U><A href="modules/Users/sample/lnusers2.csv">lnusers2.csv</A></U><br>
+<U><A href="modules/Users/sample/users.csv">users.csv</A></U><br>
+<BR>
+<!-- 
+<TABLE cellpadding=8 cellspacing=1 bgcolor=#000000>
+<TR>
+	<TD bgcolor="#FFFFFF">ln_uno,ln_name,ln_uname,ln_pass,ln_email,ln_phone,ln_news
+<BR>531525,นาย ก,abc001,abc001,tpckd@egat.or.th5,25646,1
+<BR>539853,นาย ข,abc003,abc002,tpckd@egat.or.th6,25646,1
+<BR>531527,นาย ค,kongja,abc003,tpckd@egat.or.th7,25646,1</TD>
+</TR>
+</TABLE>
+
+</FONT>
+<BR>
+ -->
+</BODY>
+</HTML>

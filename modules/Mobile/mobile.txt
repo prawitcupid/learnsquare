@@ -1,0 +1,42 @@
+การเปิดใช้งาน Learnsquare mobile version
+1. เปิด Mod Rewrite
+	สำหรับ Windows
+		Appserv - ปกติ mod rewrite จะถูกปิดไว้ ให้ทำการเปิดโดยทำตามขั้นตอนดังนี้
+			1. Start > all programe >AppServ > Configuration Server > Configuration Server
+			2. มีหน้าต่าง popup ขึ้นมาให้กด Ctrl+F เพื่อค้นหา โดยค้นหา   #LoadModule rewrite_module modules/mod_rewrite.so
+			3. # ให้เอาเครื่องหมายออก แล้วบันทึก กดปิด
+			4. Start > all programe >AppServ > Control Server by Service > Apache Restart
+		Xampp - ปกติจะเปิดใช้งานอยู่แล้ว
+	สำหรับ Linux
+		apache - ปกติจะถูกปิดการใช้งาน ให้ทำตามขั้นตอนดังนี้
+			1. เปิดหน้า terminal
+			2. sudo a2enmod rewrite
+			3. sudo /etc/init.d/apache2 restart
+
+2. แก้ไขไฟล์ .htaccess อยู่ที่ lite/.htaccess
+	แก้ไข RewriteBase ตาม path ของเว็บ Learnsquare ที่เราอยู่
+	แก้จาก #RewriteBase   /lite/ เป็น
+	กรณี 1 ไฟล์ระบบอยู่ที่ / ตั้งค่าเป็น RewriteBase   /lite/
+	กรณี 2 ไฟล์ระบบอยู่ที่ /learnsquare/ ตั้งค่าเป็น RewriteBase   /learnsquare/lite/
+
+3. ตั้งค่าฐานข้อมูล แก้ไขไฟล์ application.ini อยู่ที่ /lite/application/configs/application.ini
+	ใส่ค่าต่างๆเหมือนตอนติดตั้ง Learnsquare
+	resources.db.params.host = "localhost"
+	resources.db.params.username = "username" 	<< ใส่ชื่อผู้ใช้ของ mysql
+	resources.db.params.password = "password" 	<< ใส่รหัสผ่านของ mysql
+	resources.db.params.dbname = "databasename"	<< ใส่ชื่อฐานข้อมูลของ mysql
+	resources.db.params.charset = "utf8"
+	resources.db.isDefaultTableAdapter = true
+	lite.prefix = "ln_"							<< ค่า prefix เหมือนตอนติดตั้ง learnsquare
+	lite.session_exp = 1800
+	lite.coursesPaths = "/courses" 				<< path courses
+	
+4. ทดสอบการใช้งาน 
+	- เปิดการใช้งาน Learnsquare Mobile version ที่ จัดการระบบ -> Mobile -> เปิดใช้งาน
+	- ให้ทำการสร้างบทเรียนขึ้นมา 1-2 บทเรียน
+	- เข้าเว็บด้วย url ปกติ แล้วต่อท้ายด้วย /lite/
+	ตัวอย่าง 
+		http://localhost/learnsquare/lite กรณี path root web learnsquare อยู่ที่ /learnsquare
+		http://localhost/lite	กรณี path root web learnsquare อยู่ที่ /
+		
+		

@@ -1,0 +1,264 @@
+<?php
+/*
+ * Create by Tammatisthan Jaengchuea
+ * Friday 29 May 2009
+ */
+//require_once 'lib/nusoap.php';
+class SMT_Text {
+	protected $_file;
+	protected $_arr1;
+	protected $_arr2;
+	protected $_rawHTML;
+	protected $_pBody = '/<body[^\b]*body>/';
+	protected $_nobody = false;
+
+	protected function Getbody($string) {
+		$result = array ();
+		preg_match ( $this->_pBody, $string, $result );
+		if(!$result[0]) $this->_nobody = true;
+		return $result [0];
+	}
+	protected function ReadHtml() {
+		$handle = fopen ( $this->_file['path'], 'r' );
+		$this->_rawHTML = fread ( $handle, filesize ( $this->_file['path'] ) );
+		fclose ( $handle );
+		return $this->_rawHTML;
+	}
+	protected function SplitText($string) {
+		$pattern = '/(\.)|(\?)/';
+		return preg_split ( $pattern, $string, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+	}
+	protected function UnTabSpace($string) {
+		$string = str_replace ( "\n", "", $string );
+		$string = str_replace ( "\t", " ", $string );
+		$pattern = '/[ |]+/';
+		return preg_replace ( $pattern, ' ', $string );
+	}
+	protected function evenContent() {
+		if(count($this->_arr1) == count($this->_arr2)) {
+			return true;
+		}
+		for ($i = 0; $i < count($this->_arr1); $i++) {
+			while ($this->_arr1[$i] != strip_tags($this->_arr2[$i])) {
+				$tmp = $this->_arr2[$i] . $this->_arr2[$i+1];
+				array_splice($this->_arr2, $i, 2, $tmp);
+			}
+			if( ($this->_arr2[$i] == ".") || ($this->_arr2[$i] == "?") ) $this->_arr2[$i] .= "<img class='smt' id='$i'>";
+		}
+		return true;
+	}
+	public function analysePath() {
+		if (empty ( $this->_file['path'] )) {
+			if (empty ( $this->_file['name'] ) || empty ( $this->_file['dir'] )) {
+				die ( "Emp All (path dir file)" );
+			} else {
+				$this->_file['path'] = $this->_file['dir'] . $this->_file['name'] . ".html";
+			}
+		} else {
+			$result = array();
+			$pattern = '/[^\/]+.htm[l]?$/';
+			preg_match ( $pattern, $this->_file['path'], $result );
+			if (empty ( $this->_file['name'] )) {
+				$this->File($result[0]);
+			}
+			if (empty ( $this->_file['dir'] )) {
+				$this->_file['dir'] = str_replace ( $result, "", $this->_file['path'] );
+			}
+		}
+		return $this->_file;
+	}
+	public function Dir($str) {
+		$this->_file['dir'] = $str;
+	}
+	public function File($str) {
+		$pattern = '/.htm[l]?/';
+		$this->_file['name'] = preg_replace($pattern, '', $str);
+	}
+	public function GetContents() {
+		$temp = $this->ReadHtml ();
+		$temp2 = $this->Getbody ( $temp );
+		if($temp2)$temp = $temp2;
+		$temp = $this->UnTabSpace ( $temp );
+		$this->_arr2 = $this->SplitText($temp);
+		$temp = strip_tags( $temp );
+		$this->_arr1 = $this->SplitText ( $temp );
+		$this->evenContent();
+		return $this->_arr1;
+	}
+	public function newHTML() {
+		$filename = $this->_file['dir'] . 'suparsit_' . $this->_file['name'] . '.html';
+		$handle = fopen($filename, 'w');
+		$body = implode("",$this->_arr2);
+		$newhtml = preg_replace($this->_pBody, $body, $this->_rawHTML);
+		$script = '<script src="../../modules/SMT/javascript/jquery-1.3.2.min.js"></script>
+<script src="../../modules/SMT/javascript/wtooltip.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var xml = $.ajax({
+  			url: "'.$this->_file['name'].'.xml'.'",
+  			async: false
+ 		}).responseXML;
+		$(".smt").each(function(){this.src = "../../images/translator.png";});
+		$(".smt").wTooltip({
+     			content: true,
+     			offsetY: -30,
+				callBefore: function(tooltip,node) {					
+        			$(tooltip).html($("#"+node.id ,xml).text());
+				}
+		});		
+	});
+</script>';
+		if($this->_nobody){
+			$newhtml = $script . $body;
+		}else{
+			$newhtml = str_replace("</head>",$script . "</head>",$newhtml);
+		}
+		fwrite($handle, $newhtml);
+		fclose($handle);
+	}
+	public function Path($str = null) {
+		$this->_file['path'] = $str;
+	}
+}
+class SMT {
+	protected $_client;
+	protected $_name;
+	protected $_timeout;
+
+	public function __construct($timeout, $url = "http://203.185.132.252:8080/ws1/services/ServiceCenterService?wsdl", $name = 'translateEngThaiMosesSocket') {
+		$this->_timeout = $timeout;
+		$this->_name = $name;
+		$this->_client = new nusoap_client ( $url, 'wsdl', '', '', '', '' );
+		$this->_client->soap_defencoding = "UTF-8";
+		$this->_client->decode_utf8 = false;
+		$err = $this->_client->getError ();
+		if ($err) {
+			echo '<h2>Constructor error</h2><pre>' . $err . '</pre>';
+		}
+	}
+	/*
+	 * Input String Eng
+	 * Output String Thai
+	 */
+	public function Transate($str) {
+		$param = array ('srcEn' => $str, 'timeout' => $this->_timeout );
+		$result = $this->_client->call ( $this->_name, array ('parameters' => $param ), '', '', false, true );
+		// Check for a fault
+		if ($this->_client->fault) {
+			echo '<h2>Fault</h2><pre>';
+			print_r ( $result );
+			echo '</pre>';
+		} else {
+			// Check for errors
+			$err = $this->_client->getError ();
+			if ($err) {
+				// Display the error
+				echo '<h2>Error</h2><pre>' . $err . '</pre>';
+			} else {
+				return $result ['return'];
+			}
+		}
+	}
+}
+class SMT_MakeXML extends XMLWriter {
+	public function __construct($file) {
+		$this->openURI($file['dir'] . $file['name'] . '.xml');
+		$this->startDocument('1.0','utf-8');
+		$this->setIndent(4);
+		//--SMT--
+		$this->startElement("smt");
+		$this->writeAttribute("filename",$file['name'] . ".html");
+		$this->writeAttribute("hash", hash_file('md5', $file['path']));
+	}
+	public function endXML() {
+		$this->endElement(); //--SMT--
+		$this->endDocument();
+		$this->flush();
+	}
+	public function addMeaning($id,$mean) {
+		//--Mean--
+		$this->startElement("meaning");
+		$this->writeAttribute("id", $id);
+		$this->writeRaw(htmlspecialchars($mean));
+		$this->endElement();//--Mean--
+	}
+}
+
+function SMT_CheckUpdated($file) {
+	$xml = new XMLReader();
+	if(!$xml->open($file['dir'] . $file['name'] . '.xml')) {
+		// Can't open file
+		return false;
+	}
+	$xml->read();
+	if(hash_file('md5', $file['path']) != $xml->getAttribute('hash')){
+		// Non match hash
+		return false;
+	}
+	return true;
+}
+
+function SMT_Run($path = null, $dir = null, $filename = null,  $timeout = 6000 ) {
+
+	$html = new SMT_Text();
+	$smt = new SMT($timeout);
+
+	/*
+	 * Set Path
+	 */
+	if($dir) $html->Dir($dir);
+	if($filename) $html->File($filename);
+	if($path) $html->Path($path);
+
+	$file = $html->analysePath();
+	//lexitran
+	$lex_file = $file['name'];
+	$lex_dir = $file['dir'];
+
+	$SUPARSITStatus =lnConfigGetVar('SUPARSITStatus');
+	$LEXITRONStatus =lnConfigGetVar('LEXITRONStatus');
+	if($SUPARSITStatus&&$LEXITRONStatus){
+		//echo 'SUPARSITStatus=$SUPARSITStatus LEXITRONStatus=$LEXITRONStatus';
+		//UPDATE FILE CHECKING
+		if(SMT_CheckUpdated($file)&&(file_exists($lex_dir.'smt_'.$lex_file.'.html')))return;
+		$xml = new SMT_MakeXML($file);
+		$content = $html->GetContents();
+
+		//-------
+		for ($i = 0;$i < count($content); $i++) {
+			if(($content[$i] == ".") || ($content[$i] == "?")) continue;
+			$xml->addMeaning($i+1, $smt->Transate($content[$i]));
+		}
+
+		$xml->endXML();
+		$html->newHTML();
+
+		require_once 'modules/SMT/lexitran/getcod_en.php';
+		getcod_en($lex_file,$lex_dir);
+
+	}else if($SUPARSITStatus){
+		//echo 'SUPARSITStatus';
+		//UPDATE FILE CHECKING
+		if(SMT_CheckUpdated($file))return;
+		$xml = new SMT_MakeXML($file);
+		$content = $html->GetContents();
+
+		//-------
+		for ($i = 0;$i < count($content); $i++) {
+			if(($content[$i] == ".") || ($content[$i] == "?")) continue;
+			$xml->addMeaning($i+1, $smt->Transate($content[$i]));
+		}
+
+		$xml->endXML();
+		$html->newHTML();
+	}else if($LEXITRONStatus){
+		//echo 'LEXITRONStatus';
+		require_once 'modules/SMT/lexitran/getcod_en.php';
+		if(!(file_exists($lex_dir.'lexitran_'.$lex_file.'.html'))){
+			//echo 'file_exists = lexitran_'.$lex_file.'.html';
+			getcod_en($lex_file,$lex_dir);
+		}
+	}
+	
+}
+?>

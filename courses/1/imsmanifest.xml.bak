@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="tis-620"?>
+<!--This is a Reload version 1.1.1 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" identifier="MANIFEST-E0208A8C-4E3B-8E6B-F457-4A34C5F9FF96" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1 imscp_v1p1.xsd http://www.imsglobal.org/xsd/imsmd_v1p2 imsmd_v1p2p2.xsd">
+  <metadata>
+    <schema>IMS Content</schema>
+    <schemaversion>1.2.2</schemaversion>
+    <imsmd:lom>
+      <imsmd:general>
+        <imsmd:description>
+          <imsmd:langstring>การใช้งาน English Tense เบื้องต้นเนื้อหาเหมาะกับนักเรียน นักศึกษาระดับมัธยมต้นขึ้นไป</imsmd:langstring>
+        </imsmd:description>
+      </imsmd:general>
+    </imsmd:lom>
+  </metadata>
+  <organizations default="ORG-35878682-5AAB-B8F5-976A-8AC39D03DC73">
+    <organization identifier="ORG-35878682-5AAB-B8F5-976A-8AC39D03DC73">
+      <title>English Tense</title>
+      <item identifier="ITEM-D5BF5F92-5988-AD17-43D5-25A2D16939D8" identifierref="RES-CDD1D20F-551E-3D4D-5A96-5D2F67097087">
+        <title>English Tense เบื้องต้น</title>
+        <metadata>
+          <imsmd:lom>
+            <imsmd:general>
+              <imsmd:description>
+                <imsmd:langstring>การใช้งาน English Tense เบื้องต้นเนื้อหาเหมาะกับนักเรียน นักศึกษาระดับมัธยมต้นขึ้นไป</imsmd:langstring>
+              </imsmd:description>
+            </imsmd:general>
+          </imsmd:lom>
+        </metadata>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-CDD1D20F-551E-3D4D-5A96-5D2F67097087" href="intro.html">
+      <file href="intro.html" />
+    </resource>
+  </resources>
+</manifest>
+

@@ -1,0 +1,8 @@
+1. Date_Calc
+	@version 1.2.4
+	@author Monte Ohrt <monte@ispi.net>
+2. Option Transfer, Calendar popup
+	Matt Kruse <matt@mattkruse.com>
+	WWW: http://www.mattkruse.com/
+3. posnuke
+4. phpnuke

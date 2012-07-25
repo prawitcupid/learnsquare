@@ -1,0 +1,15 @@
+﻿<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$(".lex").wTooltip({
+ 			content: true,
+ 			offsetY: -30,
+			callBefore: function(tooltip,node) {					
+    			$(tooltip).html(descarray[$("#"+node.id).attr('id')]);
+			}
+	});		
+});
+
+
+var descarray = new Array()

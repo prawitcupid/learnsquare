@@ -1,0 +1,80 @@
+BODY {
+BACKGROUND: #FFFFFF;
+COLOR: #000000;
+FONT-SIZE: 11px;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+TEXT-DECORATION: none
+}
+
+A {
+COLOR: #000000;
+FONT-SIZE: 11px;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+TEXT-DECORATION: none
+}
+
+A:link {
+COLOR: #000000;
+FONT-SIZE: 11px;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+TEXT-DECORATION: none
+}
+
+A:active {
+COLOR: #000000;
+FONT-SIZE: 11px;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+TEXT-DECORATION: none
+}
+
+A:visited {
+COLOR: #000000;
+FONT-SIZE: 11px;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+TEXT-DECORATION: none
+}
+
+A:hover {
+COLOR: #000000;
+FONT-SIZE: 11px;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+TEXT-DECORATION: underline
+}
+
+.pn-pagetitle {
+COLOR: #000000;
+FONT-SIZE: 16px;
+FONT-WEIGHT: bold;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+LETTER-SPACING: 3px;
+TEXT-DECORATION: none
+}
+
+.pn-title {
+COLOR: #000000;
+FONT-SIZE: 11px;
+FONT-WEIGHT: bold;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+TEXT-DECORATION: none
+}
+
+.pn-normal {
+COLOR: #000000;
+FONT-SIZE: 11px;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+TEXT-DECORATION: none
+}
+
+.pn-failed {
+COLOR: #ff0034;
+FONT-SIZE: 11px;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+TEXT-DECORATION: none
+}
+
+.pn-sub {
+COLOR: #000000;
+FONT-SIZE: 9px;
+FONT-FAMILY: Tahoma, Verdana, sans-serif;
+TEXT-DECORATION: none
+}

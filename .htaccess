@@ -1,0 +1,16 @@
+AddDefaultCharset UTF-8
+php_value  output_buffering OFF
+php_value safe_mode OFF
+php_value register_globals OFF
+php_value display_errors OFF6
+php_value magic_quotes_gpc ON
+php_value file_uploads ON
+php_value memory_limit 50M
+php_value post_max_size 150M	
+php_value upload_max_filesize 150M
+php_value max_execution_time 600
+php_value session.auto_start 0
+php_value session.use_cookies 1
+
+ErrorDocument 404 /learnsquare/index.php
+

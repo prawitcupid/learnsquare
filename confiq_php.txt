@@ -1,0 +1,12 @@
+output_buffering = OFF
+safe_mode = OFF
+memory_limit = 50M
+display_errors=ON
+register_globals = OFF
+post_max_size=100M
+magic_quotes_gpc=ON
+file_uploads=ON
+upload_max_filesize=100M
+max_execution_time=1000
+session.auto_start=0
+session.use_cookies=1

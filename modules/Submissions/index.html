@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+
+<BODY>
+	<FORM METHOD=POST ACTION="">
+<SCRIPT LANGUAGE="JavaScript">
+		var MONTH_NAMES=new Array('มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม','ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.');
+		var DAY_NAMES=new Array('อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์','อ.','จ.','อ.','พ.','พ.','ศ.','ส.');
+		function CalendarPopup(){var c;if(arguments.length>0){c = new PopupWindow(arguments[0]);}else{c = new PopupWindow();c.setSize(150,175);}c.offsetX = -152;c.offsetY = 25;c.autoHide();c.monthNames = new Array('มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม');c.monthAbbreviations = new Array('ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.');c.dayHeaders = new Array("อ","จ","อ","พ","พ","ศ","ส");c.returnFunction = "CP_tmpReturnFunction";c.returnMonthFunction = "CP_tmpReturnMonthFunction";c.returnQuarterFunction = "CP_tmpReturnQuarterFunction";c.returnYearFunction = "CP_tmpReturnYearFunction";c.weekStartDay = 0;c.isShowYearNavigation = false;c.displayType = "date";c.disabledWeekDays = new Object();c.disabledDatesExpression = "";c.yearSelectStartOffset = 2;c.currentDate = null;c.todayText="Today";c.cssPrefix="";c.isShowYearNavigationInput=false;window.CP_targetInput = null;window.CP_dateFormat = "MM/dd/yyyy";c.setReturnFunction = CP_setReturnFunction;c.setReturnMonthFunction = CP_setReturnMonthFunction;c.setReturnQuarterFunction = CP_setReturnQuarterFunction;c.setReturnYearFunction = CP_setReturnYearFunction;c.setMonthNames = CP_setMonthNames;c.setMonthAbbreviations = CP_setMonthAbbreviations;c.setDayHeaders = CP_setDayHeaders;c.setWeekStartDay = CP_setWeekStartDay;c.setDisplayType = CP_setDisplayType;c.setDisabledWeekDays = CP_setDisabledWeekDays;c.addDisabledDates = CP_addDisabledDates;c.setYearSelectStartOffset = CP_setYearSelectStartOffset;c.setTodayText = CP_setTodayText;c.showYearNavigation = CP_showYearNavigation;c.showCalendar = CP_showCalendar;c.hideCalendar = CP_hideCalendar;c.getStyles = getCalendarStyles;c.refreshCalendar = CP_refreshCalendar;c.getCalendar = CP_getCalendar;c.select = CP_select;c.setCssPrefix = CP_setCssPrefix;c.showYearNavigationInput = CP_showYearNavigationInput
+return c;}
+</SCRIPT>
+ 
+	<SCRIPT language=JavaScript src="../../javascript/CalendarPopup.js"></SCRIPT>
+	<SCRIPT language=JavaScript>document.write(getCalendarStyles());</SCRIPT>
+	<SCRIPT language=JavaScript>
+	var now = new Date();
+	var cal = new CalendarPopup("div");
+	cal.addDisabledDates(null,formatDate(now,"yyyy-MM-dd"));
+	</SCRIPT>
+
+
+	<DIV id=div 
+	style="VISIBILITY: hidden; POSITION: absolute; BACKGROUND-COLOR: #0099CC; layer-background-color: #FFFFFF"></DIV>
+	
+	<INPUT class=input TYPE="text" NAME="start" size=10 VALUE="">
+	<A id=anchor title="" onclick="javascript: cal.select(document.forms[0].start,'anchor','dd-MM-yyyy'); return false;" href="#" name=anchor>click</A> (dd-mm-yyyy)
+</FORM>
+</BODY>
+</HTML>

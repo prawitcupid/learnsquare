@@ -1,0 +1,40 @@
+Math equation editor plugin for SPAW Editor 2.0 version 1.0.0
+-------------------------------
+Thank you for downloading Math equation plugin for SPAW Editor!
+
+Math equation editor plugin for SPAW Editor 2.0 version 1.0.0 have following major features:
+- equation helper dialog
+- ajax renderer expression
+- use php gd library to build image
+- don't need to install any latex cgi script on server
+- all code written in php
+- phpmathpublisher syntax are not the same as any latex standard please read the manual
+
+Installation, configuration, etc.
+---------------------------------
+Basic installation is as simple as extracting all the files and copy to spaw's "plugins" directory.
+Then edit the variable of  "mathpublisher.php" file  as following:
+
+$_dffonsize > default font size
+example::
+	$_dffonsize = 12;
+
+Using Manual.
+-------------------------------------
+Please refer to help document in directory /math/doc/help.html
+
+Frequently Asked Question.
+-------------------------------------
+1.	Q: The equation images are too small how can I increase their size.
+	A: Just change the value of $_dffonsize variable in mathpublisher.php to your prefer size.
+
+Licence
+-------
+Math equation editor is released under the terms for GNU General Public License 
+Version 2. Refer to the file docs/license.txt for details.
+
+
+Getting Support
+---------------
+Get answers to your questions, post your ideas and suggestions by email at
+way_cs16@hotmail.com

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<manifest  xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsproject.org/xsd/ims_md_rootv1p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="กลศาสตร์_และฟิสิกส์ทั่วไป" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsproject.org/xsd/ims_md_rootv1p1 ims_md_rootv1p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd" >
+ <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <imsmd:lom>
+      <imsmd:general>
+        <imsmd:title>
+          <imsmd:langstring xml:lang="en">กลศาสตร์_และฟิสิกส์ทั่วไป</imsmd:langstring>
+        </imsmd:title>
+        <imsmd:description>
+          <imsmd:langstring xml:lang="en">จุดประสงค์ของการพัฒนาซอฟต์แวร์นี้เป็นการส่งเสริมการให้นักเรียน นักศึกษาเรียนรู้และพัฒนาทักษะ เนคเทคไม่ได้พัฒนาซอฟต์แวร์เหล่านี้เอง เนคเทคจึงไม่เป็นผู้ดูแลแก้ไข ปรับปรุง ดัดแปลงเพิ่มเติม หรืออบรมการใช้ซอฟต์แวร์นี้ และไม่รับรองว่าซอฟต์แวร์เหล่านี้จะทำงานได้ถูกต้องทุกประการและการไม่รับรองความเสียหายอันเป็นผลจากการใช้ซอฟต์แวร์ดังกล่าว</imsmd:langstring>
+        </imsmd:description>
+      </imsmd:general>
+    </imsmd:lom>
+  </metadata>	
+  
+	<organizations default="MANIFEST01_ORG1">
+		<organization identifier="MANIFEST01_ORG1" structure="hierarchical">
+			<title>กลศาสตร์_และฟิสิกส์ทั่วไป</title>
+                    <item identifier="MANIFEST01_ITEM12"  identifierref="MANIFEST01_RESOURCE12" isvisible="true">
+                            <title>อะตอม และโมเลกุล</title>
+<metadata>
+          <imsmd:lom>
+            <imsmd:general>
+              <imsmd:description>
+                <imsmd:langstring xml:lang="en">ชาวกรีกโบราณ เชื่อว่าสสารทั้งหมดประกอบด้วยอนุภาคเล็กๆ เรียกว่า อะตอม ความคิดนี้แพร่กระจายออกไปและมีการ สร้าง ทฤษฎีจลน์ ขึ้น ซึ่งสามารถอธิบายสมบัติทางกายภาพและธรรมชาติของสารในรายละเอียดได้มาก สารมี 3 สถานะทางกายภาพ คือ ของแข็ง ของเหลว และ แก๊สขึ้นอยู่กับธรรมชาติของสาร อุณหภูมิ และ ความดันที่กระทำต่อสาร</imsmd:langstring>
+              </imsmd:description>
+            </imsmd:general>
+            <imsmd:technical>
+              <imsmd:duration>
+                <imsmd:datetime>P3D</imsmd:datetime>
+              </imsmd:duration>
+            </imsmd:technical>
+          </imsmd:lom>
+        </metadata>
+                    </item>
+                    <item identifier="MANIFEST01_ITEM13"  identifierref="MANIFEST01_RESOURCE13" isvisible="true">
+                            <title>แรงและการเคลื่อนที่</title>
+<metadata>
+          <imsmd:lom>
+            <imsmd:general>
+              <imsmd:description>
+                <imsmd:langstring xml:lang="en">แรงคือ ปริมาณทางฟิสิกส์ที่มีผลต่อ ความเร่ง ในการเคลื่อนที่ของวัตถุ หรือการเปลี่ยนขนาดและรูปร่างของวัตถุ แรงเป็น ปริมาณเวกเตอร์ มีทั้งขนาดและทิศทาง มีหน่วยเป็น นิวตัน</imsmd:langstring>
+              </imsmd:description>
+            </imsmd:general>
+            <imsmd:technical>
+              <imsmd:duration>
+                <imsmd:datetime>P3D</imsmd:datetime>
+              </imsmd:duration>
+            </imsmd:technical>
+          </imsmd:lom>
+        </metadata>
+                    </item>
+                    <item identifier="MANIFEST01_ITEM14"  identifierref="MANIFEST01_RESOURCE14" isvisible="true">
+                            <title>สมดุลกล</title>
+<metadata>
+          <imsmd:lom>
+            <imsmd:general>
+              <imsmd:description>
+                <imsmd:langstring xml:lang="en">โครงสร้างหรือชิ้นส่วนทางกลที่ใช้ในงานด้านวิศวกรรม ส่วนใหญ่จะจัดอยู่ในลักษณะของโครงสร้างหรือชิ้นส่วนในสภาวะสมดุล ซึ่งใช้หลักการสมดุลเพื่อหาแรงกระทำต่อชิ้นส่วนต่างๆในโครงสร้าง</imsmd:langstring>
+              </imsmd:description>
+            </imsmd:general>
+            <imsmd:technical>
+              <imsmd:duration>
+                <imsmd:datetime>P3D</imsmd:datetime>
+              </imsmd:duration>
+            </imsmd:technical>
+          </imsmd:lom>
+        </metadata>
+                    </item>
+                    <item identifier="MANIFEST01_ITEM15"  identifierref="MANIFEST01_RESOURCE15" isvisible="true">
+                            <title>เครื่องมือกล</title>
+<metadata>
+          <imsmd:lom>
+            <imsmd:general>
+              <imsmd:description>
+                <imsmd:langstring xml:lang="en">เครื่องมือกลเป็นเครื่องมือที่ช่วยผ่อนแรงและส่งกำลังจากที่หนึ่งไปยังอีกที่หนึ่ง หรืออาจเป็นเพียงเครื่องมือที่ช่วยอำนวยความสะดวกในการทำงานโดยมิได้ผ่อนแรงก็ได้</imsmd:langstring>
+              </imsmd:description>
+            </imsmd:general>
+            <imsmd:technical>
+              <imsmd:duration>
+                <imsmd:datetime>P3D</imsmd:datetime>
+              </imsmd:duration>
+            </imsmd:technical>
+          </imsmd:lom>
+        </metadata>
+                    </item>
+                    <item identifier="MANIFEST01_ITEM16"  identifierref="MANIFEST01_RESOURCE16" isvisible="true">
+                            <title>คณิตศาสตร์เบื้องต้น</title>
+<metadata>
+          <imsmd:lom>
+            <imsmd:general>
+              <imsmd:description>
+                <imsmd:langstring xml:lang="en">เช่นเรื่อง ตรีโกณมิติ คือการพิจารณาสามเหลี่ยมมุมฉาก ที่มีมุมหนึ่งเท่ากับ ซีต้า มีด้านประกอบมุมฉากยาว a และ b และด้านตรงข้ามมุมฉากยาว c</imsmd:langstring>
+              </imsmd:description>
+            </imsmd:general>
+            <imsmd:technical>
+              <imsmd:duration>
+                <imsmd:datetime>P3D</imsmd:datetime>
+              </imsmd:duration>
+            </imsmd:technical>
+          </imsmd:lom>
+        </metadata>
+                    </item>
+
+		</organization>
+	</organizations>
+	<resources>
+		<resource identifier="MANIFEST01_RESOURCE12"  type="webcontent" adlcp:scormtype="sco" href="resources/lesson1.html">
+		</resource>
+		<resource identifier="MANIFEST01_RESOURCE13"  type="webcontent" adlcp:scormtype="sco" href="resources/lesson2.html">
+		</resource>
+		<resource identifier="MANIFEST01_RESOURCE14"  type="webcontent" adlcp:scormtype="sco" href="resources/lesson3.html">
+		</resource>
+		<resource identifier="MANIFEST01_RESOURCE15"  type="webcontent" adlcp:scormtype="sco" href="resources/lesson4.html">
+		</resource>
+		<resource identifier="MANIFEST01_RESOURCE16"  type="webcontent" adlcp:scormtype="sco" href="resources/lesson5.html">
+		</resource>
+
+	</resources>
+</manifest>

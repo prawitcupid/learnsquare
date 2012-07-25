@@ -1,0 +1,412 @@
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\plugins\core\dialogs
+ไฟล์ flash_prop.inc.php
+ค้นหา คำว่า 
+echo 'spawErrorMessages["error_width_nan"] = "' . $lang->m('error_width_nan') . '";' . "\n";
+แล้วเพิ่ม
+//add cid for learnsquare
+echo "var cid='" . $_GET['cid']."';";
+//end add cid for learnsquare
+ก่อนบรรทัดที่ค้นหา
+----------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\plugins\core\dialogs
+ไฟล์ flash_prop.js
+ค้นหา คำว่า 
+SpawEngine.openDialog(
+แก้ไขโดยเพิ่ม cid เข้าไปตามข้อความข้างล่าง
+SpawEngine.openDialog('spawfm', 'spawfm', spawEditor, document.getElementById('csrc').value, 'type=flash', 'SpawFlashPropDialog.browseClickCallback', null, null,cid);
+----------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\plugins\core\dialogs
+ไฟล์ hyperlink.inc.php
+ค้นหา คำว่า 
+<script type="text/javascript" src="<?php echo SpawConfig::getStaticConfigValue('SPAW_DIR') ?>plugins/core/dialogs/hyperlink.js"></script>
+แล้วเพิ่ม
+<script type="text/javascript">
+<!--
+<?php
+//add cid for learnsquare
+echo "var cid='" . $_GET['cid']."';\n";
+//end add cid for learnsquare
+?>
+//-->
+</script>
+หลังบรรทัดที่ค้นหา
+----------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\plugins\core\dialogs
+ไฟล์ hyperlink.js
+ค้นหา คำว่า 
+SpawEngine.openDialog(
+แก้ไขโดยเพิ่ม cid เข้าไปตามข้อความข้างล่าง
+SpawEngine.openDialog('spawfm', 'spawfm', spawEditor, document.getElementById('csrc').value, 'type=flash', 'SpawFlashPropDialog.browseClickCallback', null, null,cid);
+----------------------------------------------------------------------------------------------------------------------------------------
+
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\plugins\core\dialogs
+ไฟล์ image_prop.inc.php
+ค้นหา คำว่า 
+echo 'spawErrorMessages["error_width_nan"] = "' . $lang->m('error_width_nan') . '";' . "\n";
+แล้วเพิ่ม
+//add cid for learnsquare
+echo "var cid='" . $_GET['cid']."';";
+//end add cid for learnsquare
+ก่อนบรรทัดที่ค้นหา
+----------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\plugins\core\dialogs
+ไฟล์ image_prop.js
+ค้นหา คำว่า 
+SpawEngine.openDialog(
+แก้ไขโดยเพิ่ม cid เข้าไปตามข้อความข้างล่าง
+SpawEngine.openDialog('spawfm', 'spawfm', spawEditor, document.getElementById('csrc').value, 'type=flash', 'SpawFlashPropDialog.browseClickCallback', null, null,cid);
+----------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\plugins\core\dialogs
+ไฟล์ table_cell_prop.inc.php
+ค้นหา คำว่า 
+echo 'spawErrorMessages["error_width_nan"] = "' . $lang->m('error_width_nan') . '";' . "\n";
+แล้วเพิ่ม
+//add cid for learnsquare
+echo "var cid='" . $_GET['cid']."';";
+//end add cid for learnsquare
+ก่อนบรรทัดที่ค้นหา
+----------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\plugins\core\dialogs
+ไฟล์ table_cell_prop.js
+ค้นหา คำว่า 
+SpawEngine.openDialog(
+แก้ไขโดยเพิ่ม cid เข้าไปตามข้อความข้างล่าง
+SpawEngine.openDialog('spawfm', 'spawfm', spawEditor, document.getElementById('csrc').value, 'type=flash', 'SpawFlashPropDialog.browseClickCallback', null, null,cid);
+----------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\plugins\core\js\common
+ไฟล์ insert.js
+ค้นหา คำว่า 
+SpawPGcore.hyperlinkClick = function(editor, tbi, sender)
+แล้วแก้ไข
+SpawPGcore.hyperlinkClick = function(editor, tbi, sender,cid)
+
+ค้นหา คำว่า 
+SpawEngine.openDialog('core', 'hyperlink', editor, a, '', 'SpawPGcore.hyperlinkClickCallback', tbi, sender)
+แล้วแก้ไข
+SpawEngine.openDialog('core', 'hyperlink', editor, a, '', 'SpawPGcore.hyperlinkClickCallback', tbi, sender,cid)
+
+ค้นหา คำว่า 
+SpawPGcore.imageClick = function(editor, tbi, sender)
+แล้วแก้ไข
+SpawPGcore.imageClick = function(editor, tbi, sender,cid)
+
+ค้นหา คำว่า 
+SpawEngine.openDialog('spawfm', 'spawfm', editor, '', 'type=images', 'SpawPGcore.imageClickCallback', null, null)
+แล้วแก้ไข
+SpawEngine.openDialog('spawfm', 'spawfm', editor, '', 'type=images', 'SpawPGcore.imageClickCallback', null, null,cid)
+
+ค้นหา คำว่า 
+SpawPGcore.imagePropClick = function(editor, tbi, sender)
+แล้วแก้ไข
+SpawPGcore.imagePropClick = function(editor, tbi, sender,cid)
+
+ค้นหา คำว่า 
+SpawEngine.openDialog('core', 'image_prop', editor, i, '', '', tbi, sender)
+แล้วแก้ไข
+SpawEngine.openDialog('core', 'image_prop', editor, i, '', '', tbi, sender,cid)
+
+ค้นหา คำว่า 
+SpawEngine.openDialog('core', 'image_prop', editor, i, '', 'SpawPGcore.imagePropClickCallback', tbi, sender)
+แล้วแก้ไข
+SpawEngine.openDialog('core', 'image_prop', editor, i, '', 'SpawPGcore.imagePropClickCallback', tbi, sender,cid)
+
+ค้นหา คำว่า 
+SpawPGcore.flashPropClick = function(editor, tbi, sender)
+แล้วแก้ไข
+SpawPGcore.flashPropClick = function(editor, tbi, sender,cid)
+
+ค้นหา คำว่า 
+SpawEngine.openDialog('core', 'flash_prop', editor, i, '', '', tbi, sender)
+แล้วแก้ไข
+SpawEngine.openDialog('core', 'flash_prop', editor, i, '', '', tbi, sender,cid)
+
+ค้นหา คำว่า 
+SpawEngine.openDialog('core', 'flash_prop', editor, i, '', 'SpawPGcore.flashPropClickCallback', tbi, sender)
+แล้วแก้ไข
+SpawEngine.openDialog('core', 'flash_prop', editor, i, '', 'SpawPGcore.flashPropClickCallback', tbi, sender,cid)
+----------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\config
+ไฟล์ config.php ถ้าไม่มีให้ copy จาก config.default.php มาแก้ไข แล้ว save เป็น config.php
+ค้นหา คำว่า 
+// directories
+แล้วเพิ่มข้อความตามข้างล่างก่อนคำที่ค้นหา
+// for learnsquare
+$_cid1 = $_GET['cid'];
+$lnpath = split("/",substr(dirname($_SERVER["SCRIPT_NAME"]),1));
+$pathpic = trim($lnpath[0].'/courses/'.$_cid1.'/');
+$_cid1 = $pathpic;
+
+แล้วแก้ไขข้อความตามข้างล่างหลังคำที่ค้นหาเมื่อกี้
+SpawConfig::setStaticConfigItem(
+  'PG_SPAWFM_DIRECTORIES',
+  array(
+    array(
+      'dir'     => $_cid1,
+      'caption' => 'Flash movies', 
+      'params'  => array(
+        'allowed_filetypes' => array('flash')
+      )
+    ),
+    array(
+      'dir'     => $_cid1,
+      'caption' => 'Images',
+      'params'  => array(
+        'default_dir' => true, // set directory as default (optional setting)
+        'allowed_filetypes' => array('images')
+      )
+    ),
+    array(
+      'dir'     => $_cid1,
+      //'fsdir'   => SpawConfig::getStaticConfigValue('SPAW_ROOT').'uploads/files/', // optional absolute physical filesystem path
+      'caption' => 'Files', 
+      'params'  => array(
+        'allowed_filetypes' => array('any')
+      )
+    ),
+     array(
+      'dir'     => $_cid1,
+      //'fsdir'   => SpawConfig::getStaticConfigValue('SPAW_ROOT').'uploads/files/', // optional absolute physical filesystem path
+      'caption' => 'Videos', 
+      'params'  => array(
+        'allowed_filetypes' => array('video')
+      )
+    ),
+  ),
+  SPAW_CFG_TRANSFER_SECURE
+);
+--------------------------------------------------------------------------------------------------------------------------------------
+
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\js\common
+ไฟล์ engine.js
+ค้นหา คำว่า 
+SpawEngine.openDialog = function(module, dialog, editor, arguments, querystring, callback, tbi, sender)
+แก้ไขเป็น 
+SpawEngine.openDialog = function(module, dialog, editor, arguments, querystring, callback, tbi, sender,cid)
+{
+  var posX = screen.availWidth/2 - 175;
+  var posY = screen.availHeight/2 - 125;
+  var durl = SpawEngine.spaw_dir + 'dialogs/dialog.php?module=' + module + '&dialog=' + dialog 
+    + '&theme=' + editor.theme.prefix + '&lang=' + editor.getLang() 
+    + '&charset=' + editor.getOutputCharset() 
+    + '&scid=' + editor.scid + "&" + querystring + editor.getRequestUriConfigValue()
+	+ '&cid=' + cid; 
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\class
+ไฟล์ editor.class.php
+ค้นหา คำว่า 
+$objname = $this->name.'_obj';
+แก้ไขโดยเพิ่มเข้าไป
+$js_res .= "var cid = '".$cid . "';\n";
+
+ค้นหา คำว่า 
+ function show()
+แก้ไขเป็น
+  function show($cid='0')
+  {
+    echo $this->getHtml($cid);
+  }             
+ค้นหา คำว่า 
+ function getHtml()
+แก้ไขเป็น 
+ function getHtml($cid)
+----------------------------------------------------------------------------------------------------------------------------------------
+
+แก้ไขไฟล์ในโฟลเดอร์ spaw2\class
+ไฟล์ toolbar.class.php
+ค้นหา คำว่า 
+$html_res .= ' onclick="SpawPG'.$obj->module.'.'.$obj->on_click.'('.$prefix.'_obj.getTargetEditor(),'.$prefix.'_obj.getToolbarItem(\''.$id.'\'), this);"'; 
+แก้ไขเป็น
+$html_res .= ' onclick="SpawPG'.$obj->module.'.'.$obj->on_click.'('.$prefix.'_obj.getTargetEditor(),'.$prefix.'_obj.getToolbarItem(\''.$id.'\'), this,cid);"'; 
+
+----------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ Richedit
+ไฟล์ index.php
+ค้นหา คำว่า 
+<form id="theForm" method="post">
+<textarea name="text" style="display:none" rows="1" cols="20"><?=$strHTML?></textarea>
+</form>
+
+<SCRIPT language="JavaScript" event="onload" for="window">
+richedit.options = "history=yes;source=yes";
+richedit.docHtml = theForm.text.innerText;   
+//window.open("http://www.google.co.th","","width=250,height=125")
+</SCRIPT>
+
+<SCRIPT language="JavaScript" event="onscriptletevent(name, eventData)" for="richedit">
+if (name == "post") {
+	theForm.text.value = eventData;    
+	theForm.submit();                      
+}
+</SCRIPT>
+<?
+	}
+
+// not use richtext editor
+		else {
+	?>
+
+	<BODY style="border:0" bgcolor="#d3d3d3" topmargin="0" leftmargin="0">
+	<CENTER>
+	<form id="theForm" method="post">
+		<textarea name="text" rows="27" cols="50" style="width:100%"><?=$strHTML?></textarea>
+		<BR>
+		<INPUT class="button_org" TYPE="submit" value="SAVE">
+	</form>
+	</CENTER>
+	<?
+	}
+
+แก้เป็น
+
+<form method="post">
+<?
+	include("modules/spaw2/spaw.inc.php");
+	$spaw = new SpawEditor("text",$strHTML);
+	$spaw->show($_GET['cid']);
+?>
+<INPUT TYPE="submit" value="save">
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ lessonadmin.php 
+ค้นหา คำว่า 
+'javascript:popup("index.php?mod=Richedit&type=Courses&cid=
+แล้วแก้ไขเป็น
+['<img src="javascript/ThemeOffice/edit.png" />','<?=_CREATE_LESSON?>                        ','javascript:popup("index.php?mod=Richedit&type=Courses&cid=<?=$cid?>&lid=<?=$lid?>","_blank",750,480)',null,'<?=_CREATE_LESSON?>'],
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ spaw\js\common
+แก้ไขไฟล์ editor.js
+SpawEditor.prototype.img2flash = function()
+{
+  var pdoc = this.getActivePageDoc();
+  var imgs_elm = pdoc.getElementsByTagName("IMG");
+
+  // create a copy that wont be affected by changes to document
+  var imgs = new Array();
+  for (var i=0; i<imgs_elm.length; i++)
+  {
+    imgs[i] = imgs_elm[i];
+  }
+  
+  
+  for (var i=0; i<imgs.length; i++)
+  {
+    if (imgs[i].src.indexOf("spacer100.gif?imgtype=flash") != -1)
+    {
+      var flash = pdoc.createElement('EMBED');
+    	flash.setAttribute('type','application/x-shockwave-flash');
+  	flash.setAttribute('src',imgs[i].src.substring(imgs[i].src.indexOf("src=")+4));
+      // set attributes
+      for(var j=0; j<imgs[i].attributes.length; j++)
+      {
+        var attr = imgs[i].attributes[j];
+        if (attr.nodeValue != null 
+            && (imgs[i].getAttribute(attr.nodeName, 2)!=null || imgs[i].getAttribute(attr.nodeName, 0) != null)
+            && attr.specified 
+            && attr.nodeName.toLowerCase().indexOf("_moz") != 0
+            && attr.nodeName.toLowerCase() != "src"
+            && attr.nodeName.toLowerCase() != "type"
+            && attr.nodeName.toLowerCase() != "style")
+        {
+          var attrval = imgs[i].getAttribute(attr.nodeName, 2);
+          if (attrval == null)
+            attrval = imgs[i].getAttribute(attr.nodeName, 0);
+          flash.setAttribute(attr.nodeName.toLowerCase(), attrval);
+        }
+      }
+    	if (imgs[i].getAttribute("__spaw_style", 2) != null) // restore original style
+    	{
+        flash.style.cssText = imgs[i].getAttribute("__spaw_style", 2);
+        flash.removeAttribute("__spaw_style");
+      }  
+        	   
+  	  imgs[i].parentNode.replaceChild(flash, imgs[i]);
+    }
+  }
+}
+
+เป็น
+SpawEditor.prototype.img2flash = function()
+{
+  var pdoc = this.getActivePageDoc();
+  var imgs_elm = pdoc.getElementsByTagName("IMG");
+
+  // create a copy that wont be affected by changes to document
+  var imgs = new Array();
+  for (var i=0; i<imgs_elm.length; i++)
+  {
+    imgs[i] = imgs_elm[i];
+  }
+  
+  
+  for (var i=0; i<imgs.length; i++)
+  {
+    if (imgs[i].src.indexOf("spacer100.gif?imgtype=flash") != -1)
+    {
+      var flash = pdoc.createElement('EMBED');
+      	var strsp = new Array(2);
+      	strsp = imgs[i].src.substring(imgs[i].src.indexOf("src=")).split('.');
+      	if(strsp[1] == 'swf')
+      	{
+  	  	flash.setAttribute('type','application/x-shockwave-flash');
+  	}
+  	if(strsp[1] == 'wmv' )
+	{
+		flash.setAttribute('type','video/x-ms-wmv');
+	}
+	if(strsp[1] == 'avi' )
+	{
+		flash.setAttribute('type','video/avi');
+	}
+	if(strsp[1] == 'mpg' )
+	{
+		flash.setAttribute('type','video/mpeg');
+	}
+	if(strsp[1] == 'mov' )
+	{
+		flash.setAttribute('type','video/quicktime');
+	}
+  	flash.setAttribute('src',imgs[i].src.substring(imgs[i].src.indexOf("src=")+4));
+
+      // set attributes
+      for(var j=0; j<imgs[i].attributes.length; j++)
+      {
+        var attr = imgs[i].attributes[j];
+        if (attr.nodeValue != null 
+            && (imgs[i].getAttribute(attr.nodeName, 2)!=null || imgs[i].getAttribute(attr.nodeName, 0) != null)
+            && attr.specified 
+            && attr.nodeName.toLowerCase().indexOf("_moz") != 0
+            && attr.nodeName.toLowerCase() != "src"
+            && attr.nodeName.toLowerCase() != "type"
+            && attr.nodeName.toLowerCase() != "style")
+        {
+          var attrval = imgs[i].getAttribute(attr.nodeName, 2);
+          if (attrval == null)
+            attrval = imgs[i].getAttribute(attr.nodeName, 0);
+          flash.setAttribute(attr.nodeName.toLowerCase(), attrval);
+        }
+      }
+    	if (imgs[i].getAttribute("__spaw_style", 2) != null) // restore original style
+    	{
+        flash.style.cssText = imgs[i].getAttribute("__spaw_style", 2);
+        flash.removeAttribute("__spaw_style");
+      }  
+        	   
+  	  imgs[i].parentNode.replaceChild(flash, imgs[i]);
+    }
+  }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+แก้ไขไฟล์ในโฟลเดอร์ spaw\js\common
+แก้ไขไฟล์ editor.js
+ค้นหาคำว่า
+flash.style.cssText = "border: 1px solid #000000; background: url(" + SpawEngine.spaw_dir + "img/flash.gif);";
+แก้ไขเป็น 
+if( flashs[i].attributes.getNamedItem('src').nodeValue.indexOf(".swf") == -1)
+      		flash.style.cssText = "border: 1px solid #000000; background: url(" + SpawEngine.spaw_dir + "img/video.gif);";
+      	else
+  		flash.style.cssText = "border: 1px solid #000000; background: url(" + SpawEngine.spaw_dir + "img/flash.gif);";
+  		
+---------------------------------------------------------------------------------------------------------------------------------------------------------------  		
