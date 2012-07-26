@@ -28,7 +28,10 @@ function themeheader() {
 	if ($GLOBALS['index'] == 1) {
 		echo '<div class="grid_14">';
 		blocks('center');
-	}else{
+	} elseif ($GLOBALS['expand'] == 1 && $GLOBALS['index'] != 1) {
+		echo '<div class="grid_24">';
+		echo '<div class="content-main">';
+	} else {
 		echo '<div class="grid_19">';
 		echo '<div class="content-main">';
 	}

@@ -67,16 +67,21 @@ if (!empty($type)) {
 		$coursepath= COURSE_DIR . "/" .$cid;
 		//$picdir=COURSE_DIR . '/' .$cid . '/images';
 		$url= 'http://'.$host.$path.'/'.$coursepath ;
+		
 		$lessonstable = $lntable['lessons'];
 		$lessonscolumn = &$lntable['lessons_column'];
 		$result = $dbconn->Execute("SELECT $lessonscolumn[file] FROM $lessonstable WHERE $lessonscolumn[lid]='". lnVarPrepForStore($lid) ."'");
 		list($lessonfile) = $result->fields;
 		$lessonfile = $coursepath .'/'. $lessonfile;
+		
 		if (!empty($_POST['text'])) {
-			$message =$_POST['text'];
-			$message=stripslashes($message);
+			echo $_POST['text'];
+			$message = $_POST['text'];
+			$message = stripslashes($message); // squalltua's comment - ลบ \ ออก
 			$message = str_replace($url.'/','',$message);
 			$message = str_replace($path.'/'.$coursepath.'/','',$message);//edit by nay 20/03/2007
+			$message = str_replace("/ln2v5.1/modules/spaw/empty/", '', $message); // squalltua
+			
 			/*
 			if (!preg_match('/<!--RICHEDIT-->/i',$message)) {
 				$message .= '<!--RICHEDIT-->';
@@ -85,13 +90,21 @@ if (!empty($type)) {
 			$fp=fopen($lessonfile,"w");
 			fwrite($fp,$message);
 			fclose($fp);
-			echo "<SCRIPT language=JavaScript>window.close();</SCRIPT>";
+			
+			// squalltua
+			//echo "<SCRIPT language=JavaScript>window.close();</SCRIPT>";
 		}
 		if (file_exists($lessonfile)) {
+			// squalltua
+			// อ่านไฟล์ตรงนี้??
+			// แต่ก็ยังไม่เข้าใจว่าทำไม่ spawn มันเปลี่ยน path ของไฟล์เองได้
+			
 			$fp=fopen($lessonfile,"r");
 			$strHTML=fread($fp,filesize($lessonfile));
 			//echo strlen($strHTML);
-			$strHTML = lnShowContent($strHTML,$url);
+			
+			//squalltua
+			//$strHTML = lnShowContent($strHTML,$url);
 		}
 	}
 

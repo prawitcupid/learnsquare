@@ -2326,7 +2326,6 @@ var API = new SCORMapi();
 	    echo "<BR><BR><CENTER>Alternate content for non-supporting browsers <P><A HREF=".$object." target=_blank><B>Click here!</B></A></CENTER></IFRAME>";
 
 	    // show footer menu
-	    echo 'somthing'; // <- squalltua
 	    echo '</td></tr>';
 	    echo '</table>';
 
@@ -2672,9 +2671,12 @@ function lessonShow($vars) {
 				lnUpdateUserEvent("Reading  $courseinfo[code]  Course: $cid       Chapter:        $no  ");
 			}
 		}
-
-		//header("location:$config[homeurl]$lessonfile", false);
-		echo '<iframe src="'.$config[homeurl].$lessonfile.'" frameborder="0" width="100%"></iframe>';
+		
+		// old code <-- check by squalltua
+		header("location:$config[homeurl]$lessonfile", false);
+		
+		// ?? code <-- check by squalltua
+		//echo '<iframe src="'.$config[homeurl].$lessonfile.'" frameborder="0" width="100%" height="100%"></iframe>';
 	}
 
 
