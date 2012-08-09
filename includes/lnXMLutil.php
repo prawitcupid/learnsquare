@@ -90,6 +90,7 @@ function lnShowContent($html,$url) {
 				continue;
 			}
 			$scourl = $url_parts['path'];
+			
 			$newscourl = $url.'/'.$scourl;
 			//echo 'scourl='.$scourl." - newscourl=".$newscourl.'<BR>';
 			if ($scourl != "index.php") {

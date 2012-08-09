@@ -66,7 +66,7 @@ if ($op == 'lesson_show') {
 	@unlink($file2);
 
 	if(lnSessionGetVar('lidnow') == $lid){
-
+		// ตอนนี้เข้าที่นี้ by squalltua
 	}else{
 		//echo lnSessionGetVar('lidnow') ."==". $lid;
 		$usercidnow = lnSessionGetVar('cidnow');
@@ -83,9 +83,11 @@ if ($op == 'lesson_show') {
 	$usercidnow = lnSessionGetVar('cidnow');
 	$usereidnow = lnSessionGetVar('eidnow');
 	$userlidnow = lnSessionGetVar('lidnow');
-
-
-
+	
+	/**
+	 * by squalltua
+	 * คืออะไรไม่รู้ไม่เห็นได้สร้างไฟล์ไว้เลย
+	 */
 	$lessondir =  'modules' . '/' . 'Courses' . '/' . $filenow;
 	$file =  fopen($lessondir,"w");
 	fwrite($file,$usereidnow);
@@ -96,6 +98,8 @@ if ($op == 'lesson_show') {
 	fwrite($file,",");
 	fwrite($file,$uidnow);
 	fclose($file);
+	// จบการ งง
+	
 	$GLOBALS['expand']=1;
 }
 
@@ -165,8 +169,9 @@ if ($op == 'ln_check_scores') {
 }
 
 if($op != 'joe_jae_send' && $op != 'joe_jae_load' && $op != 'joe_online')
-include 'header.php';
-/* options */
+	include 'header.php';
+
+/* check options */
 switch ($op) {
 	case "course_detail" :						courseOverview($vars);break;
 	case "course_lesson" :					courseOutline($vars);break;
@@ -193,7 +198,8 @@ switch ($op) {
 }
 
 if($op != 'joe_jae_send' && $op != 'joe_jae_load' && $op != 'joe_online')
-include 'footer.php';
+	include 'footer.php';
+	
 /* - - - - - - - - - - - */
 /*
  * Show Course outline and Open Lesson
@@ -1881,7 +1887,7 @@ function lessonShowFrame($vars) {
 	if(!isset($eid)) $eid='';
 	if(!isset($qid)) $qid='';
 	if(!isset($quiz_ansattempts)) $quiz_ansattempts='';
-	$list = @extract($var);
+	$list = @extract($var); // unknow squalltua
 
 	//start list box menu
 	// todo - - security to access course;
@@ -1892,7 +1898,7 @@ function lessonShowFrame($vars) {
 	echo '<table class="main" width="100%" cellpadding="3" cellspacing="0" border="0">';
 	echo '<tr height="35">';
 	echo '<td bgcolor=#FFFFFF valign=middle  align=left>';
-	gotoLesson($cid, $sid, $lid);
+	gotoLesson($cid, $sid, $lid); // <-- menu "ไปบทเรียนที่"
 	//echo '</td>';
 	
 	//Bookmarks
@@ -2320,9 +2326,20 @@ var API = new SCORMapi();
 	    <?php
 
 	    /////////////////////////////////////////////////////////////////////////////ส่วนแสดงเนื้อหาใน lesson /////////////////////////////////////////////////////////////////////////////////////////////////
-
-	    echo "<IFRAME marginWidth=0 marginHeight=0 id=Content  scrolling=auto name=Content src=\"".$object."\" frameBorder=0 width=100% height=585>";
-
+		// squalltua iframe
+	    
+	    // echo $object;
+	    // defined('DS') or define('DS',DIRECTORY_SEPARATOR);
+	    // extract($vars);
+// 
+		// $lessoninfo = lnLessonGetVars($lid);
+// 		
+	    // $dir = $_SERVER['PHP_SELF'];
+		// $dirs = explode(DS, $dir);
+	    // // echo '<iframe src="..'.DS.$dirs[1].DS.'courses'.DS.$cid.DS.$lessoninfo[file].'" style="border: none; width: 100%; height: 600px; text-align: center;" ></iframe>';
+// 	     
+	    
+	    echo "<IFRAME marginWidth=0 marginHeight=0 id=Content  scrolling=auto name=Content src=\"".$object."\" frameBorder=0 width=100% height=585>"; 
 	    echo "<BR><BR><CENTER>Alternate content for non-supporting browsers <P><A HREF=".$object." target=_blank><B>Click here!</B></A></CENTER></IFRAME>";
 
 	    // show footer menu
@@ -2337,6 +2354,7 @@ var API = new SCORMapi();
  * Lesson Show (Show Content)
  */
 function lessonShow($vars) {
+	
 	// Get arguments from argument array
 	extract($vars);
 
@@ -2363,6 +2381,7 @@ function lessonShow($vars) {
 	
 	$lessonfile = $lessondir.'/'.$lessoninfo['file'];
 	$lessonmp4f = '../'.COURSE_DIR . '/'.$lessoninfo['cid'] .'/'.$lessoninfo['file'];
+
 	$eid = lnGetEnroll($cid);
 
 	//Track Session Student
@@ -2372,7 +2391,7 @@ function lessonShow($vars) {
 	//exit();
 
 	$ext = pathinfo($lessonfile);
-	$ext = $ext['extension'];
+	$ext = $ext['extension']; // หาค่า extension ของไฟล์
 	////////////////////////////////////////////////////////////////////////check ว่าเป็นข้อสอบ hotpotatoes หรือเปล่าจาก type type ข้อสอบจาก hotpotatoes = 2 ///////////////////////////////////////
 	if ($lessoninfo['type'] != '0' && $lessoninfo['type'] != '2' && $lessoninfo['type'] != '3') {
 		courseTracking($eid,$lid,0);
@@ -2381,11 +2400,11 @@ function lessonShow($vars) {
 	}
 	/////////////////////////////////////////////////////////////////////	/////////////////////////////////////////////////////////////////////	/////////////////////////////////////////////////////////////////////
 	if (!file_exists($lessonfile)) {
-		return;
+		return; // ??? ออกไปไหน squalltua
 	}
 
 	if (is_dir($lessonfile)){
-		return;
+		return; // ??? ออกไปไหน squalltua
 	}
 
 	if (strtolower($ext) == 'html' || strtolower($ext) == 'htm') {
@@ -2394,7 +2413,6 @@ function lessonShow($vars) {
 		$content=lnShowContent($content,$lessondir);
 	}
 
-	// squalltua debug here?
 	if (preg_match('{PAGE}',$content) || preg_match('{PDF}',$content) || preg_match('{SWF}',$content) || preg_match('{WMV}',$content) || preg_match('{PPT}',$content)  || preg_match('{EGATLOGO}',$content) || preg_match('<!--RICHEDIT-->',$content)) {
 		
 		?>
@@ -2435,9 +2453,8 @@ function lessonShow($vars) {
 		$swfObjEnd=" quality=high bgcolor=#FFFFFF  NAME='Lesson' TYPE='application/x-shockwave-flash' PLUGINSPAGE='http://www.macromedia.com/go/getflashplayer'></EMBED>";
 		$content = str_replace("{SWF}","{SWF}$lessondir/",$content);
 		$content = str_replace("{swf}","{swf}$lessondir/",$content);
-		$content = preg_replace("/{swf}(.*?){\/swf}/si", "$swfObjBegin1\\1\"$swfObjBegin2\\1\"$swfObjEnd", $content) ;
+		$content = preg_replace("/{swf}(.*?){\/swf}/si", "$swfObjBegin1\\1\"$swfObjBegin2\\1\"$swfObjEnd", $content);
 		$content = preg_replace("/{SWF}(.*?){\/SWF}/si", "$swfObjBegin1\\1\"$swfObjBegin2\\1\"$swfObjEnd", $content);
-		
 
 		//- -  WMV
 		$wmvObjBegin="<object id=MediaPlayer type=application/x-oleobject height=252 width=320 classid=CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6><param name=\"URL\" value=\"";
@@ -2675,7 +2692,7 @@ function lessonShow($vars) {
 		// old code <-- check by squalltua
 		header("location:$config[homeurl]$lessonfile", false);
 		
-		// ?? code <-- check by squalltua
+		// ?? code ไม่รู้ใครใส่มา <-- check by squalltua
 		//echo '<iframe src="'.$config[homeurl].$lessonfile.'" frameborder="0" width="100%" height="100%"></iframe>';
 	}
 

@@ -74,6 +74,8 @@ if (!empty($type)) {
 		list($lessonfile) = $result->fields;
 		$lessonfile = $coursepath .'/'. $lessonfile;
 		
+		// squalltua
+		// save file
 		if (!empty($_POST['text'])) {
 			echo $_POST['text'];
 			$message = $_POST['text'];
@@ -81,7 +83,7 @@ if (!empty($type)) {
 			$message = str_replace($url.'/','',$message);
 			$message = str_replace($path.'/'.$coursepath.'/','',$message);//edit by nay 20/03/2007
 			$message = str_replace("/ln2v5.1/modules/spaw/empty/", '', $message); // squalltua
-			
+			//echo urlencode($message);
 			/*
 			if (!preg_match('/<!--RICHEDIT-->/i',$message)) {
 				$message .= '<!--RICHEDIT-->';
@@ -92,19 +94,29 @@ if (!empty($type)) {
 			fclose($fp);
 			
 			// squalltua
-			//echo "<SCRIPT language=JavaScript>window.close();</SCRIPT>";
+			echo "<SCRIPT language=JavaScript>window.close();</SCRIPT>";
 		}
+		
+		// squalltua
+		// ถ้ามี ไฟล์
 		if (file_exists($lessonfile)) {
 			// squalltua
 			// อ่านไฟล์ตรงนี้??
 			// แต่ก็ยังไม่เข้าใจว่าทำไม่ spawn มันเปลี่ยน path ของไฟล์เองได้
 			
+			// เปิดไฟล์ อ่านเท่านั้น
 			$fp=fopen($lessonfile,"r");
+			// เก็บไว้ที่ $strHTML
 			$strHTML=fread($fp,filesize($lessonfile));
 			//echo strlen($strHTML);
 			
-			//squalltua
-			//$strHTML = lnShowContent($strHTML,$url);
+			// squalltua
+			/*
+			 * ดูแล้ว path ยังไม่ถูกเปลี่ยนในตอนนี้
+			 * แสดงว่าไม่มีการ ตัดต่อ path ระหว่างการเรียก spaw
+			 */ 
+			$strHTML = lnShowContent($strHTML,$url);
+			
 		}
 	}
 
@@ -377,6 +389,7 @@ if ($type == "Choice" || $type == "mqQuestion") {
 }
 
 include("modules/spaw/spaw.inc.php");
+// echo urlencode($strHTML);
 $spaw = new SpawEditor("text",@$strHTML);
 //echo ">>>>".$pathpic;
 $spaw->show($pathpic);
