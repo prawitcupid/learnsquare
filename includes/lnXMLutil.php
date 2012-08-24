@@ -3,6 +3,11 @@
 
 //define ('LN_BLOCK_IMAGE_DIR','modules/Blocks/images/upload');
 
+// by pukkapol.tan@nectec.or.th
+include('simple_html_dom.php');
+defined('DS') or define('DS',DIRECTORY_SEPARATOR);
+// end
+
 $my_files=array();
 class MyHandler {
 	function MyHandler(){}
@@ -68,10 +73,34 @@ function lnShowContent($html,$url) {
 	xml_set_element_handler($parser,'openHandler','closeHandler');
 	xml_parse($parser,$html);
 	*/
+	
+	/**
+	 * HTML DOM Parser
+	 * http://simplehtmldom.sourceforge.net/
+	 * 
+	 * @description		แก้ปัญหา path src ผิด
+	 * @modified by		pukkapol.tan@nectec.or.th
+	 * @sine			2012.08.24
+	 */ 
+	 
+	// debug 
+	//echo htmlspecialchars($html);
+	
+	// Create DOM from string
+	$html = str_get_html($html);
+	
+	// replace all img and embed
+	foreach ($html->find('img, embed') as $e) {
+		$old_src = $e->src;
+		$e->src = $url.DS.$old_src;
+	}
+	return $html;
+	// ========== end squalltua edit code ======== //
+	
 	//extract tags html
 	//http://stackoverflow.com/questions/138313/how-to-extract-img-src-title-and-alt-from-html-using-php
-	preg_match_all('/<([A-Za-z])[^>]+>/i',$html, $tags); 
-	//print_r($tags);
+	preg_match_all('/<([A-Za-z])[^>]+>/i',$html, $tags); // old code
+	// print_r($tags);
 	for($i=0;$i<count($tags[0]);$i++){
 		//echo "<Pre>Tag =". $tags[0][$i]."</Pre>";
 		//php xml

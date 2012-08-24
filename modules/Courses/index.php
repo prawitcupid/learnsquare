@@ -1889,7 +1889,7 @@ function lessonShowFrame($vars) {
 	if(!isset($quiz_ansattempts)) $quiz_ansattempts='';
 	$list = @extract($var); // unknow squalltua
 
-	//start list box menu
+	// start list box menu
 	// todo - - security to access course;
 	echo '<TABLE width=100% CELLPADDING="0" CELLSPACING="0" BORDER="0"><TR><TD>';
 	tabMenu($vars,2);
@@ -2326,18 +2326,15 @@ var API = new SCORMapi();
 	    <?php
 
 	    /////////////////////////////////////////////////////////////////////////////ส่วนแสดงเนื้อหาใน lesson /////////////////////////////////////////////////////////////////////////////////////////////////
-		// squalltua iframe
-	    
+		// squalltua iframe ======
 	    // echo $object;
 	    // defined('DS') or define('DS',DIRECTORY_SEPARATOR);
 	    // extract($vars);
-// 
 		// $lessoninfo = lnLessonGetVars($lid);
-// 		
 	    // $dir = $_SERVER['PHP_SELF'];
 		// $dirs = explode(DS, $dir);
-	    // // echo '<iframe src="..'.DS.$dirs[1].DS.'courses'.DS.$cid.DS.$lessoninfo[file].'" style="border: none; width: 100%; height: 600px; text-align: center;" ></iframe>';
-// 	     
+	    // echo '<iframe src="..'.DS.$dirs[1].DS.'courses'.DS.$cid.DS.$lessoninfo[file].'" style="border: none; width: 100%; height: 600px; text-align: center;" ></iframe>'; 	     
+	    //echo $object;
 	    
 	    echo "<IFRAME marginWidth=0 marginHeight=0 id=Content  scrolling=auto name=Content src=\"".$object."\" frameBorder=0 width=100% height=585>"; 
 	    echo "<BR><BR><CENTER>Alternate content for non-supporting browsers <P><A HREF=".$object." target=_blank><B>Click here!</B></A></CENTER></IFRAME>";
@@ -2381,7 +2378,10 @@ function lessonShow($vars) {
 	
 	$lessonfile = $lessondir.'/'.$lessoninfo['file'];
 	$lessonmp4f = '../'.COURSE_DIR . '/'.$lessoninfo['cid'] .'/'.$lessoninfo['file'];
-
+	
+	// squalltua
+	//echo $lessonfile;
+	
 	$eid = lnGetEnroll($cid);
 
 	//Track Session Student
@@ -2412,6 +2412,10 @@ function lessonShow($vars) {
 		$content=fread($fp,filesize($lessonfile));
 		$content=lnShowContent($content,$lessondir);
 	}
+	
+	// squalltua
+	//echo $lessondir;
+	//echo htmlspecialchars($content);
 
 	if (preg_match('{PAGE}',$content) || preg_match('{PDF}',$content) || preg_match('{SWF}',$content) || preg_match('{WMV}',$content) || preg_match('{PPT}',$content)  || preg_match('{EGATLOGO}',$content) || preg_match('<!--RICHEDIT-->',$content)) {
 		
