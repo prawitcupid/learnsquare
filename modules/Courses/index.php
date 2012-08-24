@@ -2412,15 +2412,15 @@ function lessonShow($vars) {
 		$content=fread($fp,filesize($lessonfile));
 		$content=lnShowContent($content,$lessondir);
 	}
-	
-	// squalltua
-	//echo $lessondir;
-	//echo htmlspecialchars($content);
 
 	if (preg_match('{PAGE}',$content) || preg_match('{PDF}',$content) || preg_match('{SWF}',$content) || preg_match('{WMV}',$content) || preg_match('{PPT}',$content)  || preg_match('{EGATLOGO}',$content) || preg_match('<!--RICHEDIT-->',$content)) {
-		
+		/**
+		 * modified by 	pukkapol.tan@nectec.or.th
+		 * @sine		2012.08.24
+		 * @description	ในส่วน comment ข้างล่างนี้ทำให้เกิดการซ้ำซ้อนของ html
+		 */ 
 		?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
 <LINK REL="STYLESHEET"
@@ -2430,8 +2430,9 @@ function lessonShow($vars) {
 	src="modules/SCORM/api1_2.php"></script>
 </HEAD>
 <BODY BGCOLOR="#FFFFFF" TOPMARGIN="0" LEFTMARGIN="0" MARGINHEIGHT="0"
-	MARGINWIDTH="0">
+	MARGINWIDTH="0"> -->
 		<?
+		// end modified by pukkapol.tan@nectec.or.th
 
 		//- - pdf tag  {PDF}file.pdf{/PDF} */
 		$pdfObjBegin="<OBJECT id='Acrobat Control for ActiveX' height=550 width=100% border=1 classid=CLSID:CA8A9780-280D-11CF-A24D-444553540000><PARAM NAME='_Version' VALUE='327680'><PARAM NAME='_ExtentX' VALUE='18812'><PARAM NAME='_ExtentY' VALUE='14552'><PARAM NAME='_StockProps' VALUE='0'><PARAM NAME='SRC' VALUE=";
