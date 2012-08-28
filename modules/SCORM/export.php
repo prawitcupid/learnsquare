@@ -35,13 +35,13 @@ switch ($op) {
 		$ims_course_description= htmlspecialchars($courseinfo['description']);
 		$ims_course_description = str_replace("\r\n",':::', $ims_course_description);
 		$ims_course_description = str_replace('"',"'", $ims_course_description);
-
-
+	
 		/* generate the imsmanifest.xml header attributes */
 		$imsmanifest_xml = str_replace(array('{COURSE_TITLE}','{COURSE_DESCRIPTION}'), array($ims_course_title,$ims_course_description), $ims_template_xml['header']);
-
+		
+		// ประกาศ zip file
 		//$zipfile = new zipfile();
-		$zipfile = new ZipArchive(); 
+		$zipfile = new ZipArchive();
 		if ($lid) {
 			$filename = 'lesson_'.$courseinfo['code'].'_'.$lid.'.zip';
 		}else {
@@ -294,8 +294,8 @@ switch ($op) {
 		zip_close($zipfile);
 		
 		/* create the archive */
-		header('Content-Type: application/octet-stream');
-		header('Content-transfer-encoding: binary'); 
+		// header('Content-Type: application/octet-stream');
+		// header('Content-transfer-encoding: binary'); 
 		/*
 		if ($lid) {
 			$filename = 'lesson_'.$courseinfo['code'].'_'.$lid.'.zip';
@@ -304,14 +304,36 @@ switch ($op) {
 			$filename = 'lesson_'.$courseinfo['code'].'.zip';
 		}
 		*/
-		header("Content-Disposition: attachment; filename=$tmpfile");
-		header('Expires: 0');
-		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-		header('Pragma: public');
-		readfile($filename);
+		// header("Content-Disposition: attachment; filename=$tmpfile");
+		// header('Expires: 0');
+		// header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		// header('Pragma: public');
+		// readfile($filename);
 		
 		//echo $zipfile->file();
-
+		
+		/**
+		 * fix bug about force download zip file
+		 * by pukkapol.tan@nectec.or.th
+		 * sine 2012.08.28
+		 */
+		if(file_exists($filename)){
+			header('Content-Description: File Transfer');
+			header('Content-Type: application/octet-stream');
+			header('Content-Disposition: atteachment; filename='.$tmpfile);
+			header('Content-Transfer-Encoding: binary');
+			header('Expires: 0');
+			header('Cashe-Control: must-revalidate, post-check=0, pre-check=0');
+			header('Pragma:public');
+			header('Content-Length: '.filesize($filename));
+			ob_clean();
+			flush();
+			readfile($filename);
+			exit;
+		}else{
+			echo 'File does not exists';
+		}
+		
 		break;
 	
 	default :		
