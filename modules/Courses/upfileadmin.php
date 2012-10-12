@@ -11,9 +11,12 @@ if (!lnSecAuthAction(0, 'Courses::Admin', "::", ACCESS_MODERATE)) {
 }
 
 
-// todo - -  define
-define('MAX_FILESIZE','50000000'); //max. filesize in bytes for uploading images 50 M
-
+// fixed
+// max file size 
+// by 	pukkapol.tan@nectec.or.th
+// date	2012.10.12
+$php_ini = ini_get_all();
+define('MAX_FILESIZE',$php_ini['upload_max_filesize']);
 
 /**
 * upload files
@@ -273,7 +276,7 @@ function uploadFiles($vars) {
 			 if (!file_exists($coursepath."/".$_FILES['upfile']['name'][$i])) 
 			 {
 				// if (copy($_FILES['upfile']['tmp_name'][$i], $coursepath."/" . $_FILES['upfile']['name'][$i])) 
-				 
+				
 				if(move_uploaded_file($_FILES['upfile']['tmp_name'][$i], $coursepath."/" . $_FILES['upfile']['name'][$i]))
 				{
 					$path_parts = pathinfo($_FILES['upfile']['name'][$i]);

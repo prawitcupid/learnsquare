@@ -278,9 +278,11 @@ function questionaireForm($vars)
 <br><br>
 
 <INPUT TYPE="hidden" NAME="action" VALUE="savequestionaire">
-<INPUT TYPE="hidden" NAME="op" VALUE="show_report">
+<INPUT TYPE="hidden" NAME="op" VALUE="save_questionaire">
 <INPUT TYPE="hidden" NAME="mod" VALUE="Courses">
 <INPUT TYPE="hidden" NAME="file" VALUE="report">
+<input type="hidden" name="eid" value="<?php echo $_GET['eid']; ?>">
+<input type="hidden" name="sid" value="<?php echo $_GET['sid']; ?>">
 
 <input type="submit" class="button" name="Submit" value="Submit">
 

@@ -24,10 +24,10 @@ $vars= array_merge($_GET,$_POST);
 /* options */
 
 switch($op) {
-	case "edit_enroll":						editEnroll($vars); break;
-	case "show_report":  showReport($vars); break;
-	case "save_questionaire": saveQuestionaire($vars); 
-	default :	showReport($vars);
+	case "edit_enroll":		editEnroll($vars); break;
+	case "show_report":  		showReport($vars); break;
+	case "save_questionaire":	saveQuestionaire($eid,$sid,$vars);showReport($var); break;
+	default :			showReport($vars);
 }
 
 echo '</TD></TR></TABLE>';
@@ -165,21 +165,31 @@ function showReport($vars) {
 		list ($eid_count) = $result_questionaire->fields;
 		
 		$sid=lnGetSID($eid); //send $sid for check course submission
-		
+	
+		/**
+		 * Fixed Bug
+		 * fixed error loop saveQuestionaire
+		 * solve: 	remove it
+		 * solution: 	save from $op type $op = save_questionair
+		 * by: 		pukkapol.tan@nectec.or.th
+		 * date:	2012.10.11 
+		 **/
+			
 		if($eid_count==null)
 		{
-			if($action=="savequestionaire")
-			{		
-				echo "<TD ALIGN=\"CENTER\" WIDTH=\"100\">";
-				$check_q = saveQuestionaire($eid,$sid,$vars);
-				echo $check_q;
-				echo "</TD>";										
-			}
-			else
-			{
-				echo "<TD ALIGN=\"CENTER\" WIDTH=\"100\"><INPUT TYPE=\"submit\" VALUE=\"Reply\" CLASS=\"button_org\" OnClick=\"javascript:window.open('index.php?mod=Courses&amp;file=questionaire&amp;op=qtForm&amp;eid=$eid','_self')\"></TD>";						
+			// ***** remove it
+			//if($action=="savequestionaire")
+			//{		
+			//	echo "<TD ALIGN=\"CENTER\" WIDTH=\"100\">";
+			//	$check_q = saveQuestionaire($eid,$sid,$vars);
+			//	echo $check_q;
+			//	echo "</TD>";										
+			//}
+			//else
+			//{
+				echo "<TD ALIGN=\"CENTER\" WIDTH=\"100\"><INPUT TYPE=\"submit\" VALUE=\"Reply\" CLASS=\"button_org\" OnClick=\"javascript:window.open('index.php?mod=Courses&amp;file=questionaire&amp;op=qtForm&amp;eid=$eid&amp;sid=$sid','_self')\"></TD>";						
 			
-		}
+			//}
 		}else{
 			echo "<TD ALIGN=\"CENTER\" WIDTH=\"100\">";
 			echo "ส่งแล้ว";	
@@ -282,17 +292,15 @@ function saveQuestionaire($eid,$sid,$vars)
 					  )";
 
 			$dbconn->Execute($query);
-			 if ($dbconn->ErrorNo() != 0) {
+			// remove by pukkapol.tan@nectec
+			/*if ($dbconn->ErrorNo() != 0) {
 			 	//echo "error";
         			return "ส่งไม่สำเร็จ";
     			} 
     			else
     			{
     				return "ส่งแล้ว";
-    			}
-	
-
-
-
+    			}*/
+			// end remove
 }
 ?>

@@ -1,39 +1,41 @@
 <?php
 /************************************************************/
-/* Function themeheader()									*/
+/* Function themeheader()													 */
 /************************************************************/
 function themeheader() {
 	global $index,$expand;
 	$thistheme = lnConfigGetVar('Default_Theme');
 	
-	echo '<div class="wrapper_header">';
-	echo '<div class="container_24">';
-	echo '<div class="grid_24">';
-	echo '<div class="grid_10">';
-	echo '<image src="themes/'.$thistheme.'/images/logo_blue.png">';
-	echo '</div>';
-	echo '<div class="clear"></div>';
+	echo '<div class="container clearfix">';
+	echo '<div class="grid_12">'; // start flash
+	echo '<object width="780" height="227"';
+	echo 'classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" ';
+	echo 'codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0">';
+	echo '<param name="SRC" value="51.swf">';
+	echo '<embed src="themes/pea/images/51.swf" width="780" height="227"></embed>';
+	echo '</object>';
+	echo '</div>'; // end flash
+	
+	echo '<div class="grid_12">'; // start menu
 	echo '<div class="mainmenu">';
 	mainmenu();
 	echo '</div>';
-	echo '</div>';
-	echo '<div class="clear"></div>';
-	echo '<div class="wrapper_content">';
+	echo '</div>'; // end menu
 		
-	echo '<div class="grid_5">';
+	echo '<div class="grid_3">'; // start side left
 	if ($GLOBALS['expand']!=1) { 
 		blocks('left');
 	}
+	echo '</div>'; //end side left
 	
-	echo '</div>';
 	if ($GLOBALS['index'] == 1) {
-		echo '<div class="grid_14">';
+		echo '<div class="grid_6">'; // start content
 		blocks('center');
 	} elseif ($GLOBALS['expand'] == 1 && $GLOBALS['index'] != 1) {
-		echo '<div class="grid_24">';
+		echo '<div class="grid_12">';
 		echo '<div class="content-main">';
 	} else {
-		echo '<div class="grid_19">';
+		echo '<div class="grid_9">';
 		echo '<div class="content-main">';
 	}
 }
@@ -43,24 +45,17 @@ function themeheader() {
 /************************************************************/
 function themefooter() {
 $thistheme = lnConfigGetVar('Default_Theme');
-	echo '</div>';
+	echo '</div>'; // end content
 	
 	if ($GLOBALS['index'] == 1) {
-		echo '<div class="grid_5">'; 
+		echo '<div class="grid_3">'; // start side right
 		blocks('right');
-		echo '</div>';
+		echo '</div>';  // end side right
 	}else{
 		echo '</div>';
 	}
-		
-	echo '<div class="clear"></div>';
-	echo '</div>'; // end wrapper_conten
-	echo '</div>'; // end container_24 first 
-	echo '</div>'; // end wrapper_header
 	
-	echo '<div class="wrapper_footer">';
-	echo '<div class="container_24">';
-	echo '<div class="grid_24">';
+	echo '<div class="grid_12">';
 	echo '<div class="footer">';
 	footmsg();
 	$filename = "version.txt";
@@ -68,12 +63,10 @@ $thistheme = lnConfigGetVar('Default_Theme');
 	$contents = fread($handle, filesize($filename));
 	fclose($handle); 
 	echo 'Version: '.$contents;
-	echo '</div>';
-	echo '</div>';
-	echo '</div>'; // end container_24 second
-	echo '</div>'; // end wrapper_footer
-	echo '<div class="clear"></div>';
-	echo '<div class="fbbg"></div>';
+	echo '</div>'; // end footer
+	echo '</div>'; // end grid footer
+	
+	echo '</div>'; // end container
 
 } //*** end Function themefooter()
 
